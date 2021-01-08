@@ -50,6 +50,7 @@
     <Compile Include="PhieuDichVuModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThueMatBangModel.cs" />
+    <Compile Include="XuLyViPhamModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Liz.DoAn\Liz.DoAn.csproj">

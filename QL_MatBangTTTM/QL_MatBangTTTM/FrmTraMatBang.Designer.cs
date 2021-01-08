@@ -47,24 +47,14 @@
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.txtMaPhieuTra = new DevExpress.XtraEditors.TextEdit();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtKhachHang = new DevExpress.XtraEditors.TextEdit();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnViPham = new DevExpress.XtraEditors.ButtonEdit();
-            this.label15 = new System.Windows.Forms.Label();
-            this.cboTinhTrang = new DevExpress.XtraEditors.ComboBoxEdit();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.btnLuuNV = new DevExpress.XtraEditors.SimpleButton();
             this.btnNhapLai = new DevExpress.XtraEditors.SimpleButton();
             this.btnHuyThem = new DevExpress.XtraEditors.SimpleButton();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtNhanVien = new DevExpress.XtraEditors.TextEdit();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtNgayTra = new DevExpress.XtraEditors.DateEdit();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtTienHoanLai = new DevExpress.XtraEditors.TextEdit();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtNgayLap = new DevExpress.XtraEditors.TextEdit();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaThueMB = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -72,6 +62,19 @@
             this.colMatBang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colViTri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtNgayTra = new DevExpress.XtraEditors.DateEdit();
+            this.txtNgayLap = new DevExpress.XtraEditors.TextEdit();
+            this.txtNgayHetHan = new DevExpress.XtraEditors.TextEdit();
+            this.cboTinhTrang = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtKhachHang = new DevExpress.XtraEditors.TextEdit();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtMaMatBang = new DevExpress.XtraEditors.TextEdit();
+            this.txtTienHoanLai = new DevExpress.XtraEditors.TextEdit();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.gcDSTraMB = new DevExpress.XtraGrid.GridControl();
@@ -84,29 +87,32 @@
             this.colMaThue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgayTrar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTinhTrang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtViTri = new DevExpress.XtraEditors.TextEdit();
+            this.txtViPham = new DevExpress.XtraEditors.ButtonEdit();
+            this.txtNhanVien = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaPhieuTra.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKhachHang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnViPham.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboTinhTrang.Properties)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNhanVien.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayTra.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayTra.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTienHoanLai.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayLap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaThueMB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayTra.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayTra.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayLap.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayHetHan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTinhTrang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKhachHang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaMatBang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTienHoanLai.Properties)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gcDSTraMB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTraMB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtViTri.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtViPham.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNhanVien.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -281,25 +287,29 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 4.000001F));
             this.tableLayoutPanel5.Controls.Add(this.label10, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.txtMaPhieuTra, 3, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label1, 9, 1);
-            this.tableLayoutPanel5.Controls.Add(this.txtKhachHang, 11, 1);
-            this.tableLayoutPanel5.Controls.Add(this.label2, 9, 2);
-            this.tableLayoutPanel5.Controls.Add(this.btnViPham, 11, 2);
-            this.tableLayoutPanel5.Controls.Add(this.label15, 9, 3);
-            this.tableLayoutPanel5.Controls.Add(this.cboTinhTrang, 11, 3);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel2, 11, 5);
             this.tableLayoutPanel5.Controls.Add(this.label6, 5, 3);
-            this.tableLayoutPanel5.Controls.Add(this.txtNhanVien, 7, 3);
             this.tableLayoutPanel5.Controls.Add(this.label5, 5, 2);
-            this.tableLayoutPanel5.Controls.Add(this.txtNgayTra, 7, 2);
             this.tableLayoutPanel5.Controls.Add(this.label12, 5, 1);
-            this.tableLayoutPanel5.Controls.Add(this.txtTienHoanLai, 7, 1);
             this.tableLayoutPanel5.Controls.Add(this.label11, 1, 3);
-            this.tableLayoutPanel5.Controls.Add(this.txtNgayLap, 3, 3);
             this.tableLayoutPanel5.Controls.Add(this.label4, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.txtMaThueMB, 3, 2);
             this.tableLayoutPanel5.Controls.Add(this.label3, 1, 4);
-            this.tableLayoutPanel5.Controls.Add(this.textEdit1, 3, 4);
+            this.tableLayoutPanel5.Controls.Add(this.txtNgayTra, 7, 3);
+            this.tableLayoutPanel5.Controls.Add(this.txtNgayLap, 7, 2);
+            this.tableLayoutPanel5.Controls.Add(this.txtNgayHetHan, 7, 1);
+            this.tableLayoutPanel5.Controls.Add(this.cboTinhTrang, 11, 4);
+            this.tableLayoutPanel5.Controls.Add(this.label15, 9, 4);
+            this.tableLayoutPanel5.Controls.Add(this.label2, 9, 3);
+            this.tableLayoutPanel5.Controls.Add(this.txtKhachHang, 11, 2);
+            this.tableLayoutPanel5.Controls.Add(this.label1, 9, 2);
+            this.tableLayoutPanel5.Controls.Add(this.label7, 5, 4);
+            this.tableLayoutPanel5.Controls.Add(this.label8, 9, 1);
+            this.tableLayoutPanel5.Controls.Add(this.txtMaMatBang, 3, 3);
+            this.tableLayoutPanel5.Controls.Add(this.txtTienHoanLai, 7, 4);
+            this.tableLayoutPanel5.Controls.Add(this.txtViTri, 3, 4);
+            this.tableLayoutPanel5.Controls.Add(this.txtViPham, 11, 1);
+            this.tableLayoutPanel5.Controls.Add(this.txtNhanVien, 11, 3);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 17);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -333,73 +343,6 @@
             this.txtMaPhieuTra.Properties.ReadOnly = true;
             this.txtMaPhieuTra.Size = new System.Drawing.Size(180, 20);
             this.txtMaPhieuTra.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(686, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Khách hàng";
-            // 
-            // txtKhachHang
-            // 
-            this.txtKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKhachHang.Location = new System.Drawing.Point(805, 11);
-            this.txtKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtKhachHang.MenuManager = this.barManager1;
-            this.txtKhachHang.Name = "txtKhachHang";
-            this.txtKhachHang.Properties.ReadOnly = true;
-            this.txtKhachHang.Size = new System.Drawing.Size(180, 20);
-            this.txtKhachHang.TabIndex = 25;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(686, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 13);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Vi Phạm";
-            // 
-            // btnViPham
-            // 
-            this.btnViPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnViPham.Location = new System.Drawing.Point(805, 41);
-            this.btnViPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnViPham.MenuManager = this.barManager1;
-            this.btnViPham.Name = "btnViPham";
-            this.btnViPham.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
-            this.btnViPham.Properties.ReadOnly = true;
-            this.btnViPham.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnViPham_Properties_ButtonClick);
-            this.btnViPham.Size = new System.Drawing.Size(180, 20);
-            this.btnViPham.TabIndex = 27;
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(686, 74);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(97, 13);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "Tình trạng";
-            // 
-            // cboTinhTrang
-            // 
-            this.cboTinhTrang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.cboTinhTrang.Location = new System.Drawing.Point(805, 71);
-            this.cboTinhTrang.MenuManager = this.barManager1;
-            this.cboTinhTrang.Name = "cboTinhTrang";
-            this.cboTinhTrang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cboTinhTrang.Properties.ReadOnly = true;
-            this.cboTinhTrang.Size = new System.Drawing.Size(180, 20);
-            this.cboTinhTrang.TabIndex = 24;
             // 
             // tableLayoutPanel2
             // 
@@ -464,17 +407,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 13);
             this.label6.TabIndex = 17;
-            this.label6.Text = "Nhân viên";
-            // 
-            // txtNhanVien
-            // 
-            this.txtNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNhanVien.Location = new System.Drawing.Point(484, 71);
-            this.txtNhanVien.MenuManager = this.barManager1;
-            this.txtNhanVien.Name = "txtNhanVien";
-            this.txtNhanVien.Properties.ReadOnly = true;
-            this.txtNhanVien.Size = new System.Drawing.Size(180, 20);
-            this.txtNhanVien.TabIndex = 6;
+            this.label6.Text = "Ngày trả";
             // 
             // label5
             // 
@@ -484,22 +417,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(97, 13);
             this.label5.TabIndex = 18;
-            this.label5.Text = "Ngày trả";
-            // 
-            // txtNgayTra
-            // 
-            this.txtNgayTra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNgayTra.EditValue = null;
-            this.txtNgayTra.Location = new System.Drawing.Point(484, 41);
-            this.txtNgayTra.MenuManager = this.barManager1;
-            this.txtNgayTra.Name = "txtNgayTra";
-            this.txtNgayTra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNgayTra.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNgayTra.Properties.ReadOnly = true;
-            this.txtNgayTra.Size = new System.Drawing.Size(180, 20);
-            this.txtNgayTra.TabIndex = 19;
+            this.label5.Text = "Ngày lập";
             // 
             // label12
             // 
@@ -509,17 +427,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(97, 13);
             this.label12.TabIndex = 2;
-            this.label12.Text = "Tiền hoàn lại";
-            // 
-            // txtTienHoanLai
-            // 
-            this.txtTienHoanLai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtTienHoanLai.Location = new System.Drawing.Point(484, 11);
-            this.txtTienHoanLai.MenuManager = this.barManager1;
-            this.txtTienHoanLai.Name = "txtTienHoanLai";
-            this.txtTienHoanLai.Properties.ReadOnly = true;
-            this.txtTienHoanLai.Size = new System.Drawing.Size(180, 20);
-            this.txtTienHoanLai.TabIndex = 5;
+            this.label12.Text = "Ngày hêt hạn ";
             // 
             // label11
             // 
@@ -529,17 +437,7 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(97, 13);
             this.label11.TabIndex = 1;
-            this.label11.Text = "Ngày lập";
-            // 
-            // txtNgayLap
-            // 
-            this.txtNgayLap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNgayLap.Location = new System.Drawing.Point(163, 71);
-            this.txtNgayLap.MenuManager = this.barManager1;
-            this.txtNgayLap.Name = "txtNgayLap";
-            this.txtNgayLap.Properties.ReadOnly = true;
-            this.txtNgayLap.Size = new System.Drawing.Size(180, 20);
-            this.txtNgayLap.TabIndex = 23;
+            this.label11.Text = "Mã mặt bằng";
             // 
             // label4
             // 
@@ -566,6 +464,7 @@
             this.txtMaThueMB.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.txtMaThueMB.Properties.PopupFormMinSize = new System.Drawing.Size(369, 0);
             this.txtMaThueMB.Properties.PopupView = this.gridLookUpEdit1View;
+            this.txtMaThueMB.Properties.ReadOnly = true;
             this.txtMaThueMB.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.txtMaThueMB.Properties.ValueMember = "MaThueMB";
             this.txtMaThueMB.Size = new System.Drawing.Size(180, 20);
@@ -618,6 +517,144 @@
             this.colTenKhachHang.Visible = true;
             this.colTenKhachHang.VisibleIndex = 3;
             this.colTenKhachHang.Width = 122;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(44, 104);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(97, 13);
+            this.label3.TabIndex = 48;
+            this.label3.Text = "Vị trí";
+            // 
+            // txtNgayTra
+            // 
+            this.txtNgayTra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNgayTra.EditValue = null;
+            this.txtNgayTra.Location = new System.Drawing.Point(484, 71);
+            this.txtNgayTra.MenuManager = this.barManager1;
+            this.txtNgayTra.Name = "txtNgayTra";
+            this.txtNgayTra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNgayTra.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNgayTra.Properties.ReadOnly = true;
+            this.txtNgayTra.Size = new System.Drawing.Size(180, 20);
+            this.txtNgayTra.TabIndex = 19;
+            // 
+            // txtNgayLap
+            // 
+            this.txtNgayLap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNgayLap.Location = new System.Drawing.Point(484, 41);
+            this.txtNgayLap.MenuManager = this.barManager1;
+            this.txtNgayLap.Name = "txtNgayLap";
+            this.txtNgayLap.Properties.ReadOnly = true;
+            this.txtNgayLap.Size = new System.Drawing.Size(180, 20);
+            this.txtNgayLap.TabIndex = 5;
+            // 
+            // txtNgayHetHan
+            // 
+            this.txtNgayHetHan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNgayHetHan.Location = new System.Drawing.Point(484, 11);
+            this.txtNgayHetHan.MenuManager = this.barManager1;
+            this.txtNgayHetHan.Name = "txtNgayHetHan";
+            this.txtNgayHetHan.Properties.ReadOnly = true;
+            this.txtNgayHetHan.Size = new System.Drawing.Size(180, 20);
+            this.txtNgayHetHan.TabIndex = 50;
+            // 
+            // cboTinhTrang
+            // 
+            this.cboTinhTrang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboTinhTrang.Location = new System.Drawing.Point(805, 101);
+            this.cboTinhTrang.MenuManager = this.barManager1;
+            this.cboTinhTrang.Name = "cboTinhTrang";
+            this.cboTinhTrang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboTinhTrang.Properties.ReadOnly = true;
+            this.cboTinhTrang.Size = new System.Drawing.Size(180, 20);
+            this.cboTinhTrang.TabIndex = 24;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(686, 104);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(97, 13);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "Tình trạng";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(686, 74);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Nhân viên";
+            // 
+            // txtKhachHang
+            // 
+            this.txtKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKhachHang.Location = new System.Drawing.Point(805, 41);
+            this.txtKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtKhachHang.MenuManager = this.barManager1;
+            this.txtKhachHang.Name = "txtKhachHang";
+            this.txtKhachHang.Properties.ReadOnly = true;
+            this.txtKhachHang.Size = new System.Drawing.Size(180, 20);
+            this.txtKhachHang.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(686, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Khách hàng";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(365, 104);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(97, 13);
+            this.label7.TabIndex = 51;
+            this.label7.Text = "Tiền hoàn lại";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(686, 14);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 13);
+            this.label8.TabIndex = 52;
+            this.label8.Text = "Vi phạm";
+            // 
+            // txtMaMatBang
+            // 
+            this.txtMaMatBang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMaMatBang.Location = new System.Drawing.Point(163, 71);
+            this.txtMaMatBang.MenuManager = this.barManager1;
+            this.txtMaMatBang.Name = "txtMaMatBang";
+            this.txtMaMatBang.Properties.ReadOnly = true;
+            this.txtMaMatBang.Size = new System.Drawing.Size(180, 20);
+            this.txtMaMatBang.TabIndex = 53;
+            // 
+            // txtTienHoanLai
+            // 
+            this.txtTienHoanLai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTienHoanLai.Location = new System.Drawing.Point(484, 101);
+            this.txtTienHoanLai.MenuManager = this.barManager1;
+            this.txtTienHoanLai.Name = "txtTienHoanLai";
+            this.txtTienHoanLai.Properties.ReadOnly = true;
+            this.txtTienHoanLai.Size = new System.Drawing.Size(180, 20);
+            this.txtTienHoanLai.TabIndex = 54;
             // 
             // groupBox4
             // 
@@ -738,22 +775,38 @@
             this.colTinhTrang.VisibleIndex = 7;
             this.colTinhTrang.Width = 199;
             // 
-            // label3
+            // txtViTri
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
-            this.label3.TabIndex = 48;
-            this.label3.Text = "Mã mặt bằng";
+            this.txtViTri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtViTri.Location = new System.Drawing.Point(163, 101);
+            this.txtViTri.MenuManager = this.barManager1;
+            this.txtViTri.Name = "txtViTri";
+            this.txtViTri.Properties.ReadOnly = true;
+            this.txtViTri.Size = new System.Drawing.Size(180, 20);
+            this.txtViTri.TabIndex = 55;
             // 
-            // textEdit1
+            // txtViPham
             // 
-            this.textEdit1.Location = new System.Drawing.Point(163, 99);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(100, 20);
-            this.textEdit1.TabIndex = 49;
+            this.txtViPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtViPham.Location = new System.Drawing.Point(805, 11);
+            this.txtViPham.MenuManager = this.barManager1;
+            this.txtViPham.Name = "txtViPham";
+            this.txtViPham.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus)});
+            this.txtViPham.Properties.ReadOnly = true;
+            this.txtViPham.Properties.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.buttonEdit1_Properties_ButtonClick);
+            this.txtViPham.Size = new System.Drawing.Size(180, 20);
+            this.txtViPham.TabIndex = 56;
+            // 
+            // txtNhanVien
+            // 
+            this.txtNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNhanVien.Location = new System.Drawing.Point(805, 71);
+            this.txtNhanVien.MenuManager = this.barManager1;
+            this.txtNhanVien.Name = "txtNhanVien";
+            this.txtNhanVien.Properties.ReadOnly = true;
+            this.txtNhanVien.Size = new System.Drawing.Size(180, 20);
+            this.txtNhanVien.TabIndex = 57;
             // 
             // FrmTraMatBang
             // 
@@ -774,22 +827,24 @@
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaPhieuTra.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtKhachHang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnViPham.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cboTinhTrang.Properties)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtNhanVien.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayTra.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayTra.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTienHoanLai.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayLap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaThueMB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayTra.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayTra.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayLap.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayHetHan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cboTinhTrang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKhachHang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaMatBang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTienHoanLai.Properties)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gcDSTraMB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSTraMB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtViTri.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtViPham.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNhanVien.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -827,19 +882,15 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private DevExpress.XtraEditors.TextEdit txtMaPhieuTra;
-        private DevExpress.XtraEditors.TextEdit txtTienHoanLai;
+        private DevExpress.XtraEditors.TextEdit txtNgayLap;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private DevExpress.XtraEditors.TextEdit txtNhanVien;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private DevExpress.XtraEditors.DateEdit txtNgayTra;
-        private DevExpress.XtraEditors.TextEdit txtNgayLap;
-        private DevExpress.XtraEditors.ComboBoxEdit cboTinhTrang;
         private DevExpress.XtraEditors.TextEdit txtKhachHang;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.ButtonEdit btnViPham;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private DevExpress.XtraEditors.SimpleButton btnHuyThem;
         private DevExpress.XtraEditors.SimpleButton btnNhapLai;
@@ -852,6 +903,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn colViTri;
         private DevExpress.XtraGrid.Columns.GridColumn colTenKhachHang;
         private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtNgayHetHan;
+        private DevExpress.XtraEditors.ComboBoxEdit cboTinhTrang;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private DevExpress.XtraEditors.TextEdit txtMaMatBang;
+        private DevExpress.XtraEditors.TextEdit txtTienHoanLai;
+        private DevExpress.XtraEditors.TextEdit txtViTri;
+        private DevExpress.XtraEditors.ButtonEdit txtViPham;
+        private DevExpress.XtraEditors.TextEdit txtNhanVien;
     }
 }

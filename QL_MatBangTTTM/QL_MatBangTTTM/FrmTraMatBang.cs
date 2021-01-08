@@ -134,7 +134,7 @@ namespace QL_MatBangTTTM
             LoadAllDSThueMatBang();
             LoadDSTraMB();
         }
-        private void btnViPham_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void buttonEdit1_Properties_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             MessageBox.Show("OK");
         }
