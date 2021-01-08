@@ -1,0 +1,102 @@
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\Model.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\Model.pdb
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Data.v19.1.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Xpo.v19.1.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\Liz.DoAn.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\Liz.DoAn.pdb
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Data.v19.1.xml
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Xpo.v19.1.xml
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.Data.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.Data.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.Data.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.Data.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.Xpo.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.Xpo.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.Xpo.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.Xpo.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\obj\Debug\Model.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\obj\Debug\Model.pdb
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Printing.v19.1.Core.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Pdf.v19.1.Core.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Printing.v19.1.Core.xml
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Pdf.v19.1.Core.xml
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.Printing.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.Printing.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.Printing.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.Printing.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.Pdf.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.Pdf.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.Pdf.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.Pdf.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.XtraEditors.v19.1.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Utils.v19.1.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Sparkline.v19.1.Core.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.XtraEditors.v19.1.xml
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Utils.v19.1.xml
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Sparkline.v19.1.Core.xml
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.XtraEditors.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.XtraEditors.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.XtraEditors.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.XtraEditors.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.Utils.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.Utils.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.Utils.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.Utils.v19.1.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.Sparkline.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.Sparkline.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.Sparkline.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\Tai liệu đồ án\Source\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.Sparkline.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\Model.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\Model.pdb
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Data.v19.1.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Xpo.v19.1.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\Liz.DoAn.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Printing.v19.1.Core.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Pdf.v19.1.Core.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\Liz.DoAn.pdb
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Data.v19.1.xml
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Xpo.v19.1.xml
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Printing.v19.1.Core.xml
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Pdf.v19.1.Core.xml
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.Data.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.Data.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.Data.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.Data.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.Xpo.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.Xpo.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.Xpo.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.Xpo.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.Printing.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.Printing.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.Printing.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.Printing.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.Pdf.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.Pdf.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.Pdf.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.Pdf.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\obj\Debug\Model.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\obj\Debug\Model.pdb
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.XtraEditors.v19.1.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Utils.v19.1.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Sparkline.v19.1.Core.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.XtraEditors.v19.1.xml
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Utils.v19.1.xml
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\DevExpress.Sparkline.v19.1.Core.xml
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.XtraEditors.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.XtraEditors.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.XtraEditors.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.XtraEditors.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.Utils.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.Utils.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.Utils.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.Utils.v19.1.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\de\DevExpress.Sparkline.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\es\DevExpress.Sparkline.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ja\DevExpress.Sparkline.v19.1.Core.resources.dll
+C:\Users\Phuc\Desktop\DoAn_MonHoc\QL_MatBangTTTM\Model\bin\Debug\ru\DevExpress.Sparkline.v19.1.Core.resources.dll
