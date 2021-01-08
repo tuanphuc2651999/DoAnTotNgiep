@@ -61,7 +61,7 @@ namespace QL_MatBangTTTM
             btnHuyThem.Visible = true;
             check = false;
             txtThoiHanThue.ReadOnly = false;
-            txtThoiHanThue.Focus();
+            txtThoiHanThue.Focus();               
         }
         private void Click_BtnLuu()
         {
@@ -133,8 +133,8 @@ namespace QL_MatBangTTTM
             txtThoiHanThue.EditValue = "";
             txtPhiDV.EditValue = "";
             txtMaKhachHang.EditValue = "";
-            txtSDT.EditValue = "";
-            txtEmail.EditValue = "";
+            txtViTri.EditValue = "";
+            txtDienTich.EditValue = "";
             txtNamDaThanhToan.EditValue = 0;
             txtTienCoc.EditValue = 0;
             txtMaMB.EditValue = "";
@@ -164,11 +164,11 @@ namespace QL_MatBangTTTM
                     txtTienCoc.EditValue = "";
                     AnHienButtonAddHoaDon(true);
                 }
-                txtPhiDV.EditValue= String.Format("{0:0,0 vnđ/năm}", thueMB.PhiDichVu((int)mb.DienTich));
+                txtPhiDV.EditValue= string.Format("{0:0,0 vnđ/năm}", thueMB.PhiDichVu((int)mb.DienTich));
                 txtMaMB.EditValue = tt.MatBang;
                 txtMaKhachHang.EditValue = kh.MaKH;
-                txtSDT.EditValue = kh.SDT;
-                txtEmail.EditValue = kh.Email;
+                txtViTri.EditValue = mb.ViTri;
+                txtDienTich.EditValue = string.Format("{0:0 (m2)}", mb.DienTich);
                 //tienCoc = (int)hoaDon.SoTien;
                 thoiHanThue = (int)tt.ThoiHanThue;
                 phiDV = (int)thueMB.PhiDichVu((int)mb.DienTich);
@@ -262,6 +262,7 @@ namespace QL_MatBangTTTM
             txtThoiHanThue.EditValue= dgvDSThueMatBang.GetFocusedRowCellValue(colThoiHanThue).ToString();
             txtNhanVien.EditValue = dgvDSThueMatBang.GetFocusedRowCellValue(colNhanVien).ToString();          
             txtNgayLap.EditValue=Commons.ConvertStringToDate(dgvDSThueMatBang.GetFocusedRowCellDisplayText(colNgayLap));
+            txtTrangThai.Text= dgvDSThueMatBang.GetFocusedRowCellValue(colTrangThai).ToString();           
         }
 
         private void btnHuy_ItemClick(object sender, ItemClickEventArgs e)
@@ -292,6 +293,12 @@ namespace QL_MatBangTTTM
 
         private void btnSua_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (dgvDSThueMatBang.GetFocusedRowCellValue(colTrangThai).ToString().Equals("Đã trả"))
+            {
+                MessageBox.Show("Hợp đồng này đã trả bạn không thể chỉnh sửa","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                return;
+
+            }
             Click_BtnSua();
         }
 

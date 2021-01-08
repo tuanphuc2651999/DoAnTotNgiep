@@ -81,7 +81,7 @@ namespace BLL
         {
             return dkThue.LayThongTinMB(mb);
         }
-        public List<ThueMatBang> LayDSThueMatBang()
+        public List<ThueMatBangModel> LayDSThueMatBang()
         {
             return dkThue.LayDSThueMatBang();
         }

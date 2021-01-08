@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmThueMatBang));
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions5 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject17 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject18 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject19 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject20 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -45,11 +50,6 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions4 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject13 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject14 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject15 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject16 = new DevExpress.Utils.SerializableAppearanceObject();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -98,13 +98,6 @@
             this.txtNgayThue = new DevExpress.XtraEditors.DateEdit();
             this.txtNgayHetHan = new DevExpress.XtraEditors.DateEdit();
             this.txtNamDaThanhToan = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtSDT = new DevExpress.XtraEditors.TextEdit();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtMaKhachHang = new DevExpress.XtraEditors.TextEdit();
             this.txtPhiDV = new DevExpress.XtraEditors.TextEdit();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -117,9 +110,15 @@
             this.btnLuuNV = new DevExpress.XtraEditors.SimpleButton();
             this.txtTienCoc = new DevExpress.XtraEditors.ButtonEdit();
             this.txtThoiHanThue = new DevExpress.XtraEditors.SpinEdit();
+            this.txtTrangThai = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtMaKhachHang = new DevExpress.XtraEditors.TextEdit();
+            this.txtDienTich = new DevExpress.XtraEditors.TextEdit();
+            this.txtViTri = new DevExpress.XtraEditors.TextEdit();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.colTinhTrangString = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -139,16 +138,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayHetHan.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayHetHan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNamDaThanhToan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaKhachHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhiDV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhanVien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaMB.Properties)).BeginInit();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTienCoc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtThoiHanThue.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTrangThai.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaKhachHang.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDienTich.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtViTri.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -335,8 +334,7 @@
             this.colNhanVien,
             this.colMaDKThue,
             this.colTinhTrang,
-            this.colNgayLap,
-            this.colTinhTrangString});
+            this.colNgayLap});
             this.dgvDSThueMatBang.GridControl = this.gcThueMatBang;
             this.dgvDSThueMatBang.Name = "dgvDSThueMatBang";
             this.dgvDSThueMatBang.OptionsBehavior.Editable = false;
@@ -377,7 +375,7 @@
             this.colDichVu.Name = "colDichVu";
             this.colDichVu.Visible = true;
             this.colDichVu.VisibleIndex = 7;
-            this.colDichVu.Width = 102;
+            this.colDichVu.Width = 103;
             // 
             // colDaThanhToan
             // 
@@ -402,11 +400,11 @@
             this.colTienCoc.Caption = "Tiền cọc";
             this.colTienCoc.DisplayFormat.FormatString = "{0:0,0 vnđ}";
             this.colTienCoc.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.colTienCoc.FieldName = "HoaDonTienCoc1.SoTien";
+            this.colTienCoc.FieldName = "TienCoc";
             this.colTienCoc.Name = "colTienCoc";
             this.colTienCoc.Visible = true;
             this.colTienCoc.VisibleIndex = 6;
-            this.colTienCoc.Width = 93;
+            this.colTienCoc.Width = 88;
             // 
             // colNgayTra
             // 
@@ -427,7 +425,7 @@
             this.colNhanVien.Name = "colNhanVien";
             this.colNhanVien.Visible = true;
             this.colNhanVien.VisibleIndex = 8;
-            this.colNhanVien.Width = 96;
+            this.colNhanVien.Width = 97;
             // 
             // colMaDKThue
             // 
@@ -437,16 +435,16 @@
             this.colMaDKThue.Name = "colMaDKThue";
             this.colMaDKThue.Visible = true;
             this.colMaDKThue.VisibleIndex = 9;
-            this.colMaDKThue.Width = 96;
+            this.colMaDKThue.Width = 97;
             // 
             // colTinhTrang
             // 
             this.colTinhTrang.Caption = "Tình trạng";
-            this.colTinhTrang.FieldName = "TinhTrang";
+            this.colTinhTrang.FieldName = "TinhTrangAsString";
             this.colTinhTrang.Name = "colTinhTrang";
             this.colTinhTrang.Visible = true;
             this.colTinhTrang.VisibleIndex = 10;
-            this.colTinhTrang.Width = 106;
+            this.colTinhTrang.Width = 111;
             // 
             // colNgayLap
             // 
@@ -519,13 +517,6 @@
             this.tableLayoutPanel4.Controls.Add(this.txtNgayThue, 3, 4);
             this.tableLayoutPanel4.Controls.Add(this.txtNgayHetHan, 3, 5);
             this.tableLayoutPanel4.Controls.Add(this.txtNamDaThanhToan, 7, 2);
-            this.tableLayoutPanel4.Controls.Add(this.textEdit9, 11, 5);
-            this.tableLayoutPanel4.Controls.Add(this.label13, 9, 4);
-            this.tableLayoutPanel4.Controls.Add(this.txtEmail, 11, 4);
-            this.tableLayoutPanel4.Controls.Add(this.label12, 9, 3);
-            this.tableLayoutPanel4.Controls.Add(this.txtSDT, 11, 3);
-            this.tableLayoutPanel4.Controls.Add(this.label11, 9, 2);
-            this.tableLayoutPanel4.Controls.Add(this.txtMaKhachHang, 11, 2);
             this.tableLayoutPanel4.Controls.Add(this.txtPhiDV, 7, 4);
             this.tableLayoutPanel4.Controls.Add(this.label8, 5, 4);
             this.tableLayoutPanel4.Controls.Add(this.label9, 5, 5);
@@ -535,6 +526,13 @@
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 11, 6);
             this.tableLayoutPanel4.Controls.Add(this.txtTienCoc, 7, 3);
             this.tableLayoutPanel4.Controls.Add(this.txtThoiHanThue, 7, 1);
+            this.tableLayoutPanel4.Controls.Add(this.txtTrangThai, 11, 5);
+            this.tableLayoutPanel4.Controls.Add(this.label11, 9, 4);
+            this.tableLayoutPanel4.Controls.Add(this.label13, 9, 3);
+            this.tableLayoutPanel4.Controls.Add(this.label12, 9, 2);
+            this.tableLayoutPanel4.Controls.Add(this.txtMaKhachHang, 11, 4);
+            this.tableLayoutPanel4.Controls.Add(this.txtDienTich, 11, 3);
+            this.tableLayoutPanel4.Controls.Add(this.txtViTri, 11, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -704,7 +702,7 @@
             this.txtNgayLap.MenuManager = this.barManager1;
             this.txtNgayLap.Name = "txtNgayLap";
             this.txtNgayLap.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, false, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, false, false, editorButtonImageOptions5, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject17, serializableAppearanceObject18, serializableAppearanceObject19, serializableAppearanceObject20, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtNgayLap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtNgayLap.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
@@ -726,7 +724,7 @@
             this.txtNgayThue.MenuManager = this.barManager1;
             this.txtNgayThue.Name = "txtNgayThue";
             this.txtNgayThue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, false, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, false, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtNgayThue.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtNgayThue.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
@@ -746,7 +744,7 @@
             this.txtNgayHetHan.MenuManager = this.barManager1;
             this.txtNgayHetHan.Name = "txtNgayHetHan";
             this.txtNgayHetHan.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, false, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, false, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtNgayHetHan.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtNgayHetHan.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
@@ -767,76 +765,6 @@
             this.txtNamDaThanhToan.Properties.ReadOnly = true;
             this.txtNamDaThanhToan.Size = new System.Drawing.Size(190, 20);
             this.txtNamDaThanhToan.TabIndex = 49;
-            // 
-            // textEdit9
-            // 
-            this.textEdit9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit9.Location = new System.Drawing.Point(850, 122);
-            this.textEdit9.MenuManager = this.barManager1;
-            this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Properties.ReadOnly = true;
-            this.textEdit9.Size = new System.Drawing.Size(190, 20);
-            this.textEdit9.TabIndex = 57;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(724, 97);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(103, 13);
-            this.label13.TabIndex = 41;
-            this.label13.Text = "Email";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtEmail.Location = new System.Drawing.Point(850, 94);
-            this.txtEmail.MenuManager = this.barManager1;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Properties.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(190, 20);
-            this.txtEmail.TabIndex = 55;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(724, 69);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(103, 13);
-            this.label12.TabIndex = 40;
-            this.label12.Text = "Số điện thoại";
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSDT.Location = new System.Drawing.Point(850, 66);
-            this.txtSDT.MenuManager = this.barManager1;
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Properties.ReadOnly = true;
-            this.txtSDT.Size = new System.Drawing.Size(190, 20);
-            this.txtSDT.TabIndex = 54;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(724, 41);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(103, 13);
-            this.label11.TabIndex = 39;
-            this.label11.Text = "Khách hàng";
-            // 
-            // txtMaKhachHang
-            // 
-            this.txtMaKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtMaKhachHang.Location = new System.Drawing.Point(850, 38);
-            this.txtMaKhachHang.MenuManager = this.barManager1;
-            this.txtMaKhachHang.Name = "txtMaKhachHang";
-            this.txtMaKhachHang.Properties.ReadOnly = true;
-            this.txtMaKhachHang.Size = new System.Drawing.Size(190, 20);
-            this.txtMaKhachHang.TabIndex = 53;
             // 
             // txtPhiDV
             // 
@@ -914,7 +842,7 @@
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 27F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(190, 27);
             this.tableLayoutPanel5.TabIndex = 63;
             // 
@@ -966,7 +894,7 @@
             this.txtTienCoc.MenuManager = this.barManager1;
             this.txtTienCoc.Name = "txtTienCoc";
             this.txtTienCoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus, "", -1, true, false, false, editorButtonImageOptions4, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject13, serializableAppearanceObject14, serializableAppearanceObject15, serializableAppearanceObject16, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Plus, "", -1, true, false, false, editorButtonImageOptions3, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.txtTienCoc.Properties.ButtonsStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtTienCoc.Properties.ReadOnly = true;
             this.txtTienCoc.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
@@ -1007,16 +935,86 @@
             this.txtThoiHanThue.TabIndex = 65;
             this.txtThoiHanThue.EditValueChanged += new System.EventHandler(this.txtThoiHanThue_EditValueChanged);
             // 
+            // txtTrangThai
+            // 
+            this.txtTrangThai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTrangThai.Location = new System.Drawing.Point(850, 122);
+            this.txtTrangThai.MenuManager = this.barManager1;
+            this.txtTrangThai.Name = "txtTrangThai";
+            this.txtTrangThai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtTrangThai.Properties.Items.AddRange(new object[] {
+            "Đang thuê",
+            "Đã trả",
+            "Chờ gia hạn"});
+            this.txtTrangThai.Properties.ReadOnly = true;
+            this.txtTrangThai.Size = new System.Drawing.Size(190, 20);
+            this.txtTrangThai.TabIndex = 57;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(724, 97);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(103, 13);
+            this.label11.TabIndex = 39;
+            this.label11.Text = "Khách hàng";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(724, 69);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(103, 13);
+            this.label13.TabIndex = 41;
+            this.label13.Text = "Diện tích";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(724, 41);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(103, 13);
+            this.label12.TabIndex = 40;
+            this.label12.Text = "Vị trí";
+            // 
+            // txtMaKhachHang
+            // 
+            this.txtMaKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMaKhachHang.Location = new System.Drawing.Point(850, 94);
+            this.txtMaKhachHang.MenuManager = this.barManager1;
+            this.txtMaKhachHang.Name = "txtMaKhachHang";
+            this.txtMaKhachHang.Properties.ReadOnly = true;
+            this.txtMaKhachHang.Size = new System.Drawing.Size(190, 20);
+            this.txtMaKhachHang.TabIndex = 53;
+            // 
+            // txtDienTich
+            // 
+            this.txtDienTich.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDienTich.Location = new System.Drawing.Point(850, 66);
+            this.txtDienTich.MenuManager = this.barManager1;
+            this.txtDienTich.Name = "txtDienTich";
+            this.txtDienTich.Properties.ReadOnly = true;
+            this.txtDienTich.Size = new System.Drawing.Size(190, 20);
+            this.txtDienTich.TabIndex = 55;
+            // 
+            // txtViTri
+            // 
+            this.txtViTri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtViTri.Location = new System.Drawing.Point(850, 38);
+            this.txtViTri.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtViTri.MenuManager = this.barManager1;
+            this.txtViTri.Name = "txtViTri";
+            this.txtViTri.Properties.ReadOnly = true;
+            this.txtViTri.Size = new System.Drawing.Size(190, 20);
+            this.txtViTri.TabIndex = 66;
+            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // colTinhTrangString
-            // 
-            this.colTinhTrangString.Caption = "Tình trạng";
-            this.colTinhTrangString.Name = "colTinhTrangString";
-            this.colTinhTrangString.Visible = true;
-            this.colTinhTrangString.VisibleIndex = 11;
             // 
             // FrmThueMatBang
             // 
@@ -1051,16 +1049,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayHetHan.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayHetHan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNamDaThanhToan.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaKhachHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhiDV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhanVien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaMB.Properties)).EndInit();
             this.tableLayoutPanel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTienCoc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtThoiHanThue.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTrangThai.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaKhachHang.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDienTich.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtViTri.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
@@ -1120,9 +1118,7 @@
         private DevExpress.XtraEditors.TextEdit txtNamDaThanhToan;
         private DevExpress.XtraEditors.TextEdit txtPhiDV;
         private DevExpress.XtraEditors.TextEdit txtMaKhachHang;
-        private DevExpress.XtraEditors.TextEdit txtSDT;
-        private DevExpress.XtraEditors.TextEdit txtEmail;
-        private DevExpress.XtraEditors.TextEdit textEdit9;
+        private DevExpress.XtraEditors.TextEdit txtDienTich;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private DevExpress.XtraEditors.TextEdit txtNhanVien;
@@ -1139,6 +1135,7 @@
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraEditors.SpinEdit txtThoiHanThue;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private DevExpress.XtraGrid.Columns.GridColumn colTinhTrangString;
+        private DevExpress.XtraEditors.ComboBoxEdit txtTrangThai;
+        private DevExpress.XtraEditors.TextEdit txtViTri;
     }
 }

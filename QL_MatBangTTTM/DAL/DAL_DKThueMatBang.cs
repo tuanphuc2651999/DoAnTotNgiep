@@ -76,13 +76,34 @@ namespace DAL
         public double PhiDichVu(int dientich)
         {
             GiaDV gia = db.GiaDVs.Where(t=>t.GiaDV1== "AEON_MGDV0003").Select(t => t).FirstOrDefault();
-            return (double)(gia.Gia*dientich);
+            return (double)(gia.Gia*dientich*12);
         }
         //Thuê mặt bằng
         #region ThueMB
-        public List<ThueMatBang> LayDSThueMatBang()
+        public List<ThueMatBangModel> LayDSThueMatBang()
+        {
+            var thueMB = from tmb in db.ThueMatBangs
+                         select new ThueMatBangModel
+                         {
+                             MaThueMB = tmb.MaThueMB,
+                             MaDKThue = tmb.MaDKThue,
+                             NgayLap = string.Format("{0:dd/MM/yyyy}", tmb.NgayLap),
+                             NgayThue = string.Format("{0:dd/MM/yyyy}", tmb.NgayThue) ,
+                             NgayHetHanHopDong = string.Format("{0:dd/MM/yyyy}", tmb.NgayHetHanHopDong),
+                             ThoiHanThue = tmb.ThoiHanThue,
+                             SoNamDaThanhToan = tmb.SoNamDaThanhToan,
+                             PhiDichVuMotNam = (int)tmb.PhiDichVuMotNam,
+                             TinhTrang = tmb.TinhTrang,
+                             MaNhanVien = tmb.MaNhanVien,
+                             TienCoc =  tmb.HoaDonTienCoc1.SoTien,
+                             TongTien = tmb.TongTien
+                         };                       
+            return thueMB.ToList();
+        }
+        public List<ThueMatBang> LayDSThueMatBang2()
         {
             var thueMB = db.ThueMatBangs.Select(t => t);
+                         
             return thueMB.ToList();
         }
         public bool ThemThueMatBang(ThueMatBang thue)
@@ -472,7 +493,7 @@ namespace DAL
         }
         public List<ThueMatBang> LayDSThueMBChuaCoHoaDon()
         {
-            var dsthue = LayDSThueMatBang();
+            var dsthue = LayDSThueMatBang2();
             DateTime dateTime = DateTime.Now;
             string nam = dateTime.ToString("yyyy");
             string thang = dateTime.ToString("MM");

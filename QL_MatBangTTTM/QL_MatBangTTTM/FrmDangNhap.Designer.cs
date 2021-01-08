@@ -48,19 +48,19 @@
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel1, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.lblTitle, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(5);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.37607F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.55556F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 26.49573F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(330, 183);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(385, 225);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // tableLayoutPanel1
@@ -75,46 +75,46 @@
             this.tableLayoutPanel1.Controls.Add(this.txtMatKhau, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblMatKhau, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(5, 38);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(5);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 47);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(320, 91);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(373, 112);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // lblTenDangNhap
             // 
             this.lblTenDangNhap.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTenDangNhap.AutoSize = true;
-            this.lblTenDangNhap.Location = new System.Drawing.Point(37, 20);
-            this.lblTenDangNhap.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblTenDangNhap.Location = new System.Drawing.Point(43, 24);
+            this.lblTenDangNhap.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTenDangNhap.Name = "lblTenDangNhap";
-            this.lblTenDangNhap.Size = new System.Drawing.Size(79, 13);
+            this.lblTenDangNhap.Size = new System.Drawing.Size(101, 17);
             this.lblTenDangNhap.TabIndex = 1;
             this.lblTenDangNhap.Text = "Tên đăng nhập";
             // 
             // txtTenDangNhap
             // 
             this.txtTenDangNhap.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtTenDangNhap.Location = new System.Drawing.Point(149, 16);
-            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(6);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(174, 21);
+            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(132, 21);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(153, 23);
             this.txtTenDangNhap.TabIndex = 0;
             this.txtTenDangNhap.Text = "AEON_NV0001";
             // 
             // txtMatKhau
             // 
             this.txtMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txtMatKhau.Location = new System.Drawing.Point(149, 52);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(6);
+            this.txtMatKhau.Location = new System.Drawing.Point(174, 65);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
-            this.txtMatKhau.Size = new System.Drawing.Size(132, 21);
+            this.txtMatKhau.Size = new System.Drawing.Size(153, 23);
             this.txtMatKhau.TabIndex = 3;
             this.txtMatKhau.Text = "123456";
             // 
@@ -122,10 +122,10 @@
             // 
             this.lblMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblMatKhau.AutoSize = true;
-            this.lblMatKhau.Location = new System.Drawing.Point(37, 56);
-            this.lblMatKhau.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblMatKhau.Location = new System.Drawing.Point(43, 68);
+            this.lblMatKhau.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblMatKhau.Name = "lblMatKhau";
-            this.lblMatKhau.Size = new System.Drawing.Size(51, 13);
+            this.lblMatKhau.Size = new System.Drawing.Size(64, 17);
             this.lblMatKhau.TabIndex = 2;
             this.lblMatKhau.Text = "Mật khẩu";
             // 
@@ -141,21 +141,21 @@
             this.tableLayoutPanel3.Controls.Add(this.btnDangNhap, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnThoat, 3, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(5, 139);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(5);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 171);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(320, 39);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(373, 48);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
             // btnCauHinh
             // 
             this.btnCauHinh.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCauHinh.Location = new System.Drawing.Point(49, 5);
-            this.btnCauHinh.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCauHinh.Location = new System.Drawing.Point(57, 6);
+            this.btnCauHinh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnCauHinh.Name = "btnCauHinh";
-            this.btnCauHinh.Size = new System.Drawing.Size(71, 29);
+            this.btnCauHinh.Size = new System.Drawing.Size(82, 36);
             this.btnCauHinh.TabIndex = 0;
             this.btnCauHinh.Text = "Cấu hình";
             this.btnCauHinh.UseVisualStyleBackColor = true;
@@ -163,10 +163,10 @@
             // btnDangNhap
             // 
             this.btnDangNhap.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnDangNhap.Location = new System.Drawing.Point(130, 5);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDangNhap.Location = new System.Drawing.Point(151, 6);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(71, 29);
+            this.btnDangNhap.Size = new System.Drawing.Size(82, 36);
             this.btnDangNhap.TabIndex = 1;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
@@ -175,10 +175,10 @@
             // btnThoat
             // 
             this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnThoat.Location = new System.Drawing.Point(211, 5);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(5);
+            this.btnThoat.Location = new System.Drawing.Point(245, 6);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(71, 29);
+            this.btnThoat.Size = new System.Drawing.Size(82, 36);
             this.btnThoat.TabIndex = 2;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -189,19 +189,20 @@
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(78, 6);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.lblTitle.Location = new System.Drawing.Point(89, 8);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(173, 20);
+            this.lblTitle.Size = new System.Drawing.Size(207, 25);
             this.lblTitle.TabIndex = 6;
             this.lblTitle.Text = "Đăng nhập hệ thống";
             // 
             // FrmDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(330, 183);
+            this.ClientSize = new System.Drawing.Size(385, 225);
             this.Controls.Add(this.tableLayoutPanel2);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
