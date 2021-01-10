@@ -30,7 +30,8 @@ namespace QL_MatBangTTTM
         #region BTN
         private void Click_BtnThem()
         {
-            btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;         
+            btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnLuu.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnLuuNV.Visible = true;
@@ -42,6 +43,7 @@ namespace QL_MatBangTTTM
         }
         private void Click_BtnSua()
         {
+            btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnLuu.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
@@ -49,11 +51,14 @@ namespace QL_MatBangTTTM
             btnNhapLai.Visible = true;
             btnHuyThem.Visible = true;
             choNhapTextBox(false);
-            check = false;
+            txtMaDK.ReadOnly = true;
+            check = true;
+            checkhd = false;
         }
         private void Click_BtnLuu()
         {
             btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnLuu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnLuuNV.Visible = false;
@@ -61,10 +66,12 @@ namespace QL_MatBangTTTM
             btnHuyThem.Visible = false;
             choNhapTextBox(true);
             check = false;
+            checkhd = false;
         }
         private void Click_BtnHuy()
         {
             btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnLuu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnLuuNV.Visible = false;
@@ -72,6 +79,7 @@ namespace QL_MatBangTTTM
             btnHuyThem.Visible = false;
             choNhapTextBox(true);
             check = false;
+            checkhd = false;
             dgvDSHoaDon_FocusedRowChanged(null,null);
         }
         #endregion
@@ -85,7 +93,7 @@ namespace QL_MatBangTTTM
             txtSoDienCu.EditValue = "0";
             txtSoDienMoi.EditValue ="0";
             txtSoNuocMoi.EditValue = "0";
-           
+            cboTrangThai.SelectedIndex = -1;
         }
 
         public void choNhapTextBox(bool trangThai)
@@ -93,6 +101,7 @@ namespace QL_MatBangTTTM
             txtMaDK.ReadOnly = trangThai;
             txtSoDienMoi.ReadOnly = trangThai;
             txtSoNuocMoi.ReadOnly = trangThai;
+            cboTrangThai.ReadOnly = trangThai;
         }
         public int TongTien(int CSNM, int CSNC, int CSDM, int CSDC)
         {
@@ -170,6 +179,12 @@ namespace QL_MatBangTTTM
                 MessageBox.Show("Hãy chọn mã thuê", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMaDK.Focus();
                 return;
+            } 
+            if(string.IsNullOrEmpty(cboTrangThai.Text))
+            {
+                MessageBox.Show("Hãy chọn trạng thái", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cboTrangThai.Focus();
+                return;
             }    
             if(check)
             {
@@ -180,7 +195,14 @@ namespace QL_MatBangTTTM
                     pdv.NgayLap = Commons.ConvertStringToDate(txtNgayLap.Text);
                     pdv.NgayThanhToan = Commons.ConvertStringToDate(txtNgayLap.Text);
                     pdv.TongTien = tongTien;
-                    pdv.TinhTrang = 1;
+                    if(cboTrangThai.SelectedIndex==1)
+                    {
+                        pdv.TinhTrang = 1;
+                    }    
+                    else
+                    {
+                        pdv.TinhTrang = 0;
+                    }    
                     pdv.MaThueMB = txtMaDK.EditValue.ToString();
                     pdv.MaNhanVien = maNV;
                     CT_DichVu ctdvDien = new CT_DichVu();
@@ -188,12 +210,13 @@ namespace QL_MatBangTTTM
                     ctdvDien.MaDichVu = "AEON_MDV0001";
                     ctdvDien.ChiSoMoi = int.Parse(txtSoDienMoi.EditValue.ToString());
                     ctdvDien.ChiSoCu = int.Parse(txtSoDienCu.EditValue.ToString());
-
+                    ctdvDien.Gia = 1;
                     CT_DichVu ctdvNuoc = new CT_DichVu();
                     ctdvNuoc.MaPhieuDV = txtHoaDon.EditValue.ToString();
                     ctdvNuoc.MaDichVu = "AEON_MDV0002";
                     ctdvNuoc.ChiSoMoi = int.Parse(txtSoNuocMoi.EditValue.ToString());
                     ctdvNuoc.ChiSoCu = int.Parse(txtSoNuocCu.EditValue.ToString());
+                    ctdvNuoc.Gia = 1;
                     bool keys = true;
                     if (!thueMB.ThemHoaDonDichVu(pdv))
                     {
@@ -212,7 +235,7 @@ namespace QL_MatBangTTTM
                         tt.NgayTao = Commons.ConvertStringToDate(txtNgayLap.Text);
                         tt.TaiKhoan = pdv.ThueMatBang.DangKyThue.KhachHang.SDT;
                         tt.MaLoaiTT = 1;
-                        tt.TrangThai = 1;
+                        tt.TrangThai =1 ;
                         tt.NoiDung = string.Format(QL_MatBang.NOIDUNGTHONGBAO, (DateTime.Now).Month + "/" + (DateTime.Now).Year);
                         tt.TieuDe = QL_MatBang.TIEUDETHONGBAO;
                         thueMB.ThemThongBaoDichVu(tt);
@@ -229,6 +252,61 @@ namespace QL_MatBangTTTM
                     throw;
                 }                               
             }    
+            else
+            {
+                PhieuDichVu pdv = new PhieuDichVu();
+                pdv.TongTien = tongTien;
+                if (cboTrangThai.SelectedIndex == 1)
+                {
+                    pdv.TinhTrang = 1;
+                }
+                else
+                {
+                    pdv.TinhTrang = 0;
+                }
+                var ctdvd = thueMB.LayThongTinCT_DichVu(txtMaDK.EditValue.ToString(), "AEON_MDV0001");
+                var ctdvm = thueMB.LayThongTinCT_DichVu(txtMaDK.EditValue.ToString(), "AEON_MDV0002");
+                
+
+              
+                if (!thueMB.SuaHoaDonDichVu(pdv))
+                {
+                    MessageBox.Show("Đã có lỗi xẩy ra không thể sửa hóa đơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if (!ctdvd.ChiSoMoi.ToString().Equals(txtSoDienMoi.EditValue))
+                {
+                    CT_DichVu ctdvDien = new CT_DichVu();
+                    ctdvd.MaPhieuDV = txtHoaDon.EditValue.ToString();
+                    ctdvDien.MaDichVu = "AEON_MDV0001";
+                    ctdvDien.ChiSoMoi = int.Parse(txtSoDienMoi.EditValue.ToString());
+                    if (!thueMB.SuaCTHoaDonDichVu(ctdvDien))
+                    {
+                        MessageBox.Show("Đã có lỗi xẩy ra không thể sửa hóa đơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+                if (!ctdvm.ChiSoMoi.ToString().Equals(txtSoNuocMoi.EditValue))
+                {
+
+                    CT_DichVu ctdvNuoc = new CT_DichVu();
+                    ctdvd.MaPhieuDV = txtHoaDon.EditValue.ToString();
+                    ctdvNuoc.MaDichVu = "AEON_MDV0002";
+                    ctdvNuoc.ChiSoMoi = int.Parse(txtSoDienMoi.EditValue.ToString());
+                    if (!thueMB.SuaCTHoaDonDichVu(ctdvNuoc))
+                    {
+                        MessageBox.Show("Đã có lỗi xẩy ra không thể sửa hóa đơn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
+                MessageBox.Show("Sửa thành công hóa đơn dịch vụ :"+txtHoaDon.EditValue, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Click_BtnLuu();
+                LoadDSHoaDon();
+                LoadCboMaThue();
+                LoadCboAllMaThue();
+                dgvDSHoaDon_FocusedRowChanged(null, null);
+
+            }    
 
         }
 
@@ -236,10 +314,9 @@ namespace QL_MatBangTTTM
         {
             if (check)
             {
-                txtMaDK.EditValue = "";
+                txtMaDK.EditValue ="";
                 return;
-            }    
-                
+            }                    
             LoadCboAllMaThue();
             string ma = dgvDSHoaDon.GetFocusedRowCellDisplayText(colMaHoaDon);
             if (!string.IsNullOrEmpty(ma))
@@ -251,6 +328,7 @@ namespace QL_MatBangTTTM
                 txtMaDK.EditValue = dgvDSHoaDon.GetFocusedRowCellDisplayText(colMaThue);
                 cboTrangThai.EditValue = dgvDSHoaDon.GetFocusedRowCellDisplayText(colTinhTrang);
             }
+            return;
         }
 
         private void btnHuy_ItemClick(object sender, ItemClickEventArgs e)
@@ -263,16 +341,23 @@ namespace QL_MatBangTTTM
         {
             if (!checkhd)
                 return;
-            if(!string.IsNullOrEmpty(txtMaDK.Text.ToString())&& !txtMaDK.Text.Equals("Hãy chọn mã đăng ký"))
+            if(!string.IsNullOrEmpty(txtMaDK.Text.ToString()))
             {
                 LayHoaDonGanNhat(txtMaDK.EditValue.ToString());
+            }    
+            else
+            {
+                txtSoDienCu.Text = "0";
+                txtSoNuocCu.Text = "0";
+                txtSoDienMoi.Text = "0";
+                txtSoNuocMoi.Text = "0";
             }    
         }
 
         private void txtSoDienMoi_EditValueChanged(object sender, EventArgs e)
         {
             if (!check)
-                return;
+                return; 
             if (int.Parse(txtSoDienMoi.EditValue.ToString()) < int.Parse(txtSoDienCu.EditValue.ToString()))
             {
                 MessageBox.Show("Chỉ số mới không được bé hơn chỉ số cũ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -284,6 +369,19 @@ namespace QL_MatBangTTTM
                int.Parse(txtSoDienMoi.Text.ToString()), 
                int.Parse(txtSoDienCu.Text.ToString()));
             txtTongTien.EditValue = string.Format("{0:0,0 vnđ}", tongTien);
+            if (checkhd == false)
+            {
+                var cttd = thueMB.LayThongTinCT_DichVu(txtHoaDon.EditValue.ToString(), "AEON_MDV0001");
+                var cttn = thueMB.LayThongTinCT_DichVu(txtHoaDon.EditValue.ToString(), "AEON_MDV0002");
+                int SNM = int.Parse(txtSoNuocMoi.Text.ToString());
+                int SNC = int.Parse(txtSoNuocCu.Text.ToString());
+                int SDM = int.Parse(txtSoDienMoi.Text.ToString());
+                int SDC = int.Parse(txtSoDienCu.Text.ToString());
+                int giaDien = (int)cttd.Gia;
+                int giaNuoc = (int)cttn.Gia;
+                tongTien = ((SNM - SNC) * giaDien) + ((SDM - SDC) * giaNuoc);
+                txtTongTien.EditValue = string.Format("{0:0,0 vnđ}", tongTien);
+            }
         }
 
         private void txtSoNuocMoi_EditValueChanged(object sender, EventArgs e)
@@ -316,6 +414,16 @@ namespace QL_MatBangTTTM
         private void btnLuuNV_Click(object sender, EventArgs e)
         {
             btnLuu_ItemClick(null,null);
+        }
+
+        private void btnSua_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if(dgvDSHoaDon.GetFocusedRowCellDisplayText(colTinhTrang).Equals("Đã thanh toán"))
+            {
+                MessageBox.Show("Hóa đơn "+txtHoaDon.EditValue+" đã thanh toán bạn không thể chỉnh xửa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }    
+            Click_BtnSua();
         }
     }
 }

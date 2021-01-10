@@ -84,6 +84,11 @@ namespace QL_MatBangTTTM
 
         private void repositoryItemButtonEdit1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            if(dgvDSDKThue.GetFocusedRowCellDisplayText(colTinhTrang).ToString().Equals("Hết hạn"))
+            {
+                MessageBox.Show("Phiếu thuê này đã quá hạn không thể xử lý");
+                return;
+            }    
             if(dgvDSDKThue.GetFocusedRowCellDisplayText(colTinhTrang).ToString().Equals("Đã xử lý"))
             {
                 MessageBox.Show("Phiếu đăng ký thuê này đã xử lý không thể tạo lịch hẹn");
@@ -126,6 +131,11 @@ namespace QL_MatBangTTTM
 
         private void repositoryItemHoaDon_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
+            if (dgvDSDKThue.GetFocusedRowCellDisplayText(colTinhTrang).ToString().Equals("Hết hạn"))
+            {
+                MessageBox.Show("Phiếu thuê này đã quá hạn không thể xử lý");
+                return;
+            }
             if (dgvDSDKThue.GetFocusedRowCellDisplayText(colTinhTrang).ToString().Equals("Đã xử lý"))
             {
                 MessageBox.Show("Phiếu đăng ký thuê này đã xử lý không thể tạo hóa đơn");
@@ -153,8 +163,12 @@ namespace QL_MatBangTTTM
                 FrmTaoHoaDon taoHoaDon = new FrmTaoHoaDon(maMB, maDK);
                 taoHoaDon.ShowDialog();
                 dgvDSDKThue.SetRowCellValue(dgvDSDKThue.FocusedRowHandle, colHoaDon, taoHoaDon.MaHoaDon());
-                listHD.Add(taoHoaDon.MaHoaDon());
-                trangThai = taoHoaDon.TrangThai();
+                if(!string.IsNullOrEmpty(taoHoaDon.MaHoaDon()))
+                {
+                    listHD.Add(taoHoaDon.MaHoaDon());
+                    trangThai = taoHoaDon.TrangThai();
+                }    
+                
             }
             else
             {
@@ -471,6 +485,11 @@ namespace QL_MatBangTTTM
                     }
                 }
             }
+        }
+
+        private void btnSua_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

@@ -205,6 +205,18 @@ namespace BLL
         {
             return dkThue.ThemThongBaoDichVu(tt);
         }
-        
+        public bool SuaCTHoaDonDichVu(CT_DichVu tt)
+        {
+            return dkThue.SuaCTHoaDonDichVu(tt);
+        }
+
+        public bool SuaHoaDonDichVu(PhieuDichVu tt)
+        {
+            return dkThue.SuaHoaDonDichVu(tt);
+        }
+        public ThueMatBang LayThongTinThueMatBang(string ma)
+        {
+            return dkThue.LayThongTinThueMatBang(ma);
+        }
     }
 }

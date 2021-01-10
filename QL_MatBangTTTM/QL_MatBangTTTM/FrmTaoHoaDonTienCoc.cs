@@ -48,7 +48,7 @@ namespace QL_MatBangTTTM
             if (thueMB.ThemHoaDon(hd))
             {
                 MessageBox.Show("Thêm hóa đơn thành công");
-                maHD = maHD;
+                maHD = txtMaHoaDon.Text;
                 this.Close();
             }                
         }
@@ -71,7 +71,7 @@ namespace QL_MatBangTTTM
                 return;
             }
         }
-        private string MaHoaDon()
+        public string MaHoaDon()
         {
             return maHD;
         }

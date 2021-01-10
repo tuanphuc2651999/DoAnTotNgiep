@@ -114,7 +114,7 @@ namespace QL_MatBangTTTM
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            //loadFrm(new FrmTrangChu());
+            loadFrm(new FrmTrangChu());
         }
 
         private void btnPhanQuyen_ItemClick(object sender, ItemClickEventArgs e)

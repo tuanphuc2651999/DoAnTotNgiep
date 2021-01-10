@@ -38,6 +38,10 @@ namespace QL_MatBangTTTM
         {
             txtMaThue.Properties.DataSource = vp.LayDSThueMatBang();
         }
+        public void LoadAllMaThue()
+        {
+            txtMaThue.Properties.DataSource = thueMB.LayDSThueMatBang();
+        }
         #endregion
 
         #region Clean DL
@@ -80,7 +84,8 @@ namespace QL_MatBangTTTM
             btnNhapLai.Visible = true;
             btnHuyVP.Visible = true;
             check = true;
-            choNhapTextBox(false);         
+            choNhapTextBox(false);
+            cboTinhTrang.SelectedIndex = 1;
             txtMaHS.Text = vp.LayMaXuLyTuSinh();
             txtNhanVien.Text = maNV;
             txtNgayLap.Text = DateTime.Now.ToString("dd/MM/yyyy");
@@ -131,6 +136,7 @@ namespace QL_MatBangTTTM
         private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
         {
             Click_BtnThem();
+            LoadCboMaThue();
         }
 
         private void btnXoa_ItemClick(object sender, ItemClickEventArgs e)
@@ -145,24 +151,39 @@ namespace QL_MatBangTTTM
 
         private void btnLuu_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            errorProvider1.Clear();
+            if (txtMaThue.EditValue== null)
+            {
+                MessageBox.Show("Mã thuê không hợp lệ","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                errorProvider1.SetError(txtMaThue,"Hãy chọn lại mã thuê");
+                txtMaThue.Focus();
+                return;
+            }
+            if (txtViPham.EditValue == null)
+            {
+                MessageBox.Show("Vi phạm không hợp lê", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorProvider1.SetError(txtViPham, "Hãy chọn lại vi phạm");
+                txtViPham.Focus();
+                return;
+            }
         }
 
         private void btnHuy_ItemClick(object sender, ItemClickEventArgs e)
         {
             Click_BtnHuy();
+            dgvDSViPham_FocusedRowChanged(null, null);
         }
 
         private void FrmXuLyViPham_Load(object sender, EventArgs e)
         {
             LoadDSViPham();
-            LoadCboMaThue();
-            LoadDSHoSoViPham();
-            
+            LoadAllMaThue();
+            LoadDSHoSoViPham();          
         }
 
         private void txtMaThue_EditValueChanged(object sender, EventArgs e)
         {
+            errorProvider1.Clear();
             var tt = vp.LayThongTinThueMB(txtMaThue.Text);
             if(tt!=null)
             {
@@ -172,6 +193,7 @@ namespace QL_MatBangTTTM
             }   
             else
             {
+                LoadAllMaThue();
                 txtMatBang.Text = "";
                 txtViTri.Text = "";
                 txtKhachHang.Text = "";
@@ -196,6 +218,92 @@ namespace QL_MatBangTTTM
                 txtGhiChu.Text = tt.GhiChu;
             }    
            
+        }
+
+        private void txtViPham_EditValueChanged(object sender, EventArgs e)
+        {
+            if (!check)
+                return;
+            errorProvider1.Clear();
+            if (txtMaThue.EditValue==null)
+            {
+                MessageBox.Show("Bạn chưa chọn mã thuê", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                errorProvider1.SetError(txtMaThue, "Hãy chọn mã thuê");
+            }    
+            if(txtViPham.EditValue.Equals("AEON_MVP0002"))
+            {
+                if(vp.KiemTraCoViPhamPhiDichVu("AEON_MVP0002"))
+                {
+                    MessageBox.Show("Mã thuê "+ txtMaThue.EditValue+" đã thanh toán hóa đơn dịch vụ điện nước bạn không thể tạo vi phạm này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    errorProvider1.SetError(txtMaThue, "Hãy chọn mã thuê");
+                    return;
+                }    
+
+
+                if(vp.KiemTraViPhamPhiDichVu())
+                {
+                    MessageBox.Show("Vi phạm :"+txtViPham.Text+" trong tháng "+DateTime.Now.Month+"/"+ DateTime.Now.Year+ 
+                        " của mã thuê "+txtMaThue.EditValue+" đã tổn tại",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    errorProvider1.SetError(txtViPham, "Hãy chọn lại vi phạm");
+                    return;
+                }    
+            }else
+            {
+                if(txtViPham.EditValue!=null)
+                {
+                    if (vp.KiemTraViPham(txtViPham.EditValue.ToString()))
+                    {
+                        MessageBox.Show("Vi phạm :" + txtViPham.Text +"của mã thuê "+ txtMaThue.EditValue + " đã tổn tại",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        errorProvider1.SetError(txtViPham, "Hãy chọn lại vi phạm");
+                    }
+                }    
+                  
+            }    
+        }
+
+        private void txtTienPhat_EditValueChanged(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+        }
+
+        private void txtTienPhat_KeyPress(object sender, KeyPressEventArgs e)
+        {          
+            if(txtTienPhat.Properties.ReadOnly)
+            {
+                return;
+            }    
+            errorProvider1.Clear();
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                errorProvider1.SetError(txtTienPhat, "Tiền phạt chỉ cho nhập số");
+            }
+        }
+
+        private void txtTienPhat_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            if (txtTienPhat.Properties.ReadOnly)
+            {
+                return;
+            }
+            if (check)
+            {
+                if (txtTienPhat.Text.Length > 0)
+                {
+                    try
+                    {
+                        int tien = int.Parse(txtTienPhat.EditValue.ToString());
+                        txtTienPhat.Text = string.Format("{0:0,0 vnđ}", tien);
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                        throw;
+                    }
+                }
+            }
         }
     }
 }

@@ -42,7 +42,7 @@ namespace DAL
         public double TinhTienCoc(string maMB) {
             var matBang = db.MatBangs.FirstOrDefault(t => t.MaMB.Equals(maMB));
             var giaThueMB = db.GiaThues.FirstOrDefault(t => t.MaGiaThue.Equals(matBang.Gia));
-            return ((double)matBang.DienTich * (double)giaThueMB.Gia)/12*3;
+            return ((double)matBang.DienTich * (double)giaThueMB.Gia)/12*3-500000;
         }
         public MatBang LayThongTinMB(string mb)
         {
@@ -116,7 +116,7 @@ namespace DAL
             }
             catch (Exception)
             {
-
+                return false;
                 throw;
             }
         }
@@ -125,6 +125,7 @@ namespace DAL
             try
             {
                 ThueMatBang dk = db.ThueMatBangs.FirstOrDefault(t => t.MaThueMB.Equals(thue.MaThueMB));
+                dk.NgayHetHanHopDong = thue.NgayHetHanHopDong;
                 dk.ThoiHanThue = thue.ThoiHanThue;
                 db.SubmitChanges();
                 return true;
@@ -134,6 +135,11 @@ namespace DAL
                 return false;
                 throw;
             }
+        }
+        public ThueMatBang LayThongTinThueMatBang(string ma)
+        {
+            ThueMatBang tmb = db.ThueMatBangs.Where(t => t.MaThueMB.Equals(ma)).FirstOrDefault();
+            return tmb;
         }
         #endregion
 
@@ -355,7 +361,8 @@ namespace DAL
                                  MaMB = mb.MatBang,
                                  MaKhachHang = mb.MaKhachHang,
                                  TinhTrang = mb.TinhTrang,
-                                 MaDK = mb.MaDK
+                                 MaDK = mb.MaDK,
+                                 ViTri = mb.MatBang1.ViTri
                              };
             return dsChuaThue.ToList();
         }
@@ -613,6 +620,39 @@ namespace DAL
             {
                 CT_DichVu hd = db.CT_DichVus.Where(t => t.MaPhieuDV.Equals(maHD)).FirstOrDefault();
                 db.CT_DichVus.DeleteOnSubmit(hd);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
+        public bool SuaHoaDonDichVu(PhieuDichVu ct)
+        {
+            try
+            {
+                PhieuDichVu pdv =db.PhieuDichVus.Where(t=>t.MaPhieuDV.Equals(ct.MaPhieuDV)).FirstOrDefault();
+                pdv.TinhTrang =ct.TinhTrang;
+                pdv.TongTien = ct.TongTien;
+                db.PhieuDichVus.InsertOnSubmit(pdv);
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
+        public bool SuaCTHoaDonDichVu(CT_DichVu ct)
+        {
+            try
+            {
+                CT_DichVu pdv = db.CT_DichVus.Where(t => t.MaPhieuDV.Equals(ct.MaPhieuDV)&&t.MaDichVu.Equals(ct.MaDichVu)).FirstOrDefault();
+                pdv.ChiSoMoi = ct.ChiSoMoi;
+                db.CT_DichVus.InsertOnSubmit(pdv);
                 db.SubmitChanges();
                 return true;
             }

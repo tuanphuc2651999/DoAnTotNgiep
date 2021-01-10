@@ -93,6 +93,8 @@
             this.txtMaDK = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaDK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaMB = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colViTri = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTrangThai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtNgayLap = new DevExpress.XtraEditors.DateEdit();
             this.txtNgayThue = new DevExpress.XtraEditors.DateEdit();
@@ -363,7 +365,7 @@
             this.colNgayThue.Name = "colNgayThue";
             this.colNgayThue.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowOnlyInEditor;
             this.colNgayThue.Visible = true;
-            this.colNgayThue.VisibleIndex = 1;
+            this.colNgayThue.VisibleIndex = 2;
             this.colNgayThue.Width = 101;
             // 
             // colDichVu
@@ -457,7 +459,7 @@
             this.colNgayLap.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowOnlyInEditor;
             this.colNgayLap.UnboundType = DevExpress.Data.UnboundColumnType.DateTime;
             this.colNgayLap.Visible = true;
-            this.colNgayLap.VisibleIndex = 2;
+            this.colNgayLap.VisibleIndex = 1;
             this.colNgayLap.Width = 100;
             // 
             // groupBox2
@@ -659,7 +661,9 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtMaDK.Properties.DisplayMember = "MaDK";
             this.txtMaDK.Properties.ImmediatePopup = true;
+            this.txtMaDK.Properties.NullText = "";
             this.txtMaDK.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.txtMaDK.Properties.PopupFormMinSize = new System.Drawing.Size(420, 0);
             this.txtMaDK.Properties.PopupView = this.gridLookUpEdit1View;
             this.txtMaDK.Properties.ReadOnly = true;
             this.txtMaDK.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
@@ -672,6 +676,8 @@
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaDK,
+            this.colMaMB,
+            this.colViTri,
             this.colTrangThai});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
@@ -686,13 +692,31 @@
             this.colMaDK.Visible = true;
             this.colMaDK.VisibleIndex = 0;
             // 
+            // colMaMB
+            // 
+            this.colMaMB.Caption = "Mã mặt bằng";
+            this.colMaMB.FieldName = "MaMB";
+            this.colMaMB.Name = "colMaMB";
+            this.colMaMB.Visible = true;
+            this.colMaMB.VisibleIndex = 1;
+            // 
+            // colViTri
+            // 
+            this.colViTri.AppearanceCell.Options.UseTextOptions = true;
+            this.colViTri.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colViTri.Caption = "Vi Trí";
+            this.colViTri.FieldName = "ViTri";
+            this.colViTri.Name = "colViTri";
+            this.colViTri.Visible = true;
+            this.colViTri.VisibleIndex = 2;
+            // 
             // colTrangThai
             // 
             this.colTrangThai.Caption = "TinhTrang";
             this.colTrangThai.FieldName = "TinhTrangAsString";
             this.colTrangThai.Name = "colTrangThai";
             this.colTrangThai.Visible = true;
-            this.colTrangThai.VisibleIndex = 1;
+            this.colTrangThai.VisibleIndex = 3;
             // 
             // txtNgayLap
             // 
@@ -853,7 +877,7 @@
             this.btnHuyThem.Location = new System.Drawing.Point(3, 2);
             this.btnHuyThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuyThem.Name = "btnHuyThem";
-            this.btnHuyThem.Size = new System.Drawing.Size(51, 22);
+            this.btnHuyThem.Size = new System.Drawing.Size(51, 23);
             this.btnHuyThem.TabIndex = 2;
             this.btnHuyThem.Text = "Hủy";
             this.btnHuyThem.Visible = false;
@@ -866,7 +890,7 @@
             this.btnNhapLai.Location = new System.Drawing.Point(69, 2);
             this.btnNhapLai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNhapLai.Name = "btnNhapLai";
-            this.btnNhapLai.Size = new System.Drawing.Size(51, 22);
+            this.btnNhapLai.Size = new System.Drawing.Size(51, 23);
             this.btnNhapLai.TabIndex = 1;
             this.btnNhapLai.Text = "Nhập lại";
             this.btnNhapLai.Visible = false;
@@ -876,10 +900,10 @@
             // 
             this.btnLuuNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLuuNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuNV.ImageOptions.Image")));
-            this.btnLuuNV.Location = new System.Drawing.Point(135, 2);
+            this.btnLuuNV.Location = new System.Drawing.Point(135, 3);
             this.btnLuuNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuuNV.Name = "btnLuuNV";
-            this.btnLuuNV.Size = new System.Drawing.Size(52, 22);
+            this.btnLuuNV.Size = new System.Drawing.Size(52, 21);
             this.btnLuuNV.TabIndex = 0;
             this.btnLuuNV.Text = "Lưu";
             this.btnLuuNV.Visible = false;
@@ -920,16 +944,7 @@
             this.txtThoiHanThue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtThoiHanThue.Properties.Mask.EditMask = "n0";
-            this.txtThoiHanThue.Properties.MaxValue = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.txtThoiHanThue.Properties.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.txtThoiHanThue.Properties.MaxLength = 2;
             this.txtThoiHanThue.Properties.ReadOnly = true;
             this.txtThoiHanThue.Size = new System.Drawing.Size(190, 20);
             this.txtThoiHanThue.TabIndex = 65;
@@ -1137,5 +1152,7 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private DevExpress.XtraEditors.ComboBoxEdit txtTrangThai;
         private DevExpress.XtraEditors.TextEdit txtViTri;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaMB;
+        private DevExpress.XtraGrid.Columns.GridColumn colViTri;
     }
 }

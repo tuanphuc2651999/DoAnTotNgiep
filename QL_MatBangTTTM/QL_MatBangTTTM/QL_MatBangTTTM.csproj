@@ -155,6 +155,12 @@
     <Compile Include="FrmTaoLichHen.Designer.cs">
       <DependentUpon>FrmTaoLichHen.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTaoXuLyViPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTaoXuLyViPham.Designer.cs">
+      <DependentUpon>FrmTaoXuLyViPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmThongKeDanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </Compile>
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrangChu.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmXuLyViPham.cs">
       <SubType>Form</SubType>
@@ -250,6 +259,9 @@
     <EmbeddedResource Include="FrmTaoLichHen.resx">
       <DependentUpon>FrmTaoLichHen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmTaoXuLyViPham.resx">
+      <DependentUpon>FrmTaoXuLyViPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmThongKeDanhThu.resx">
       <DependentUpon>FrmThongKeDanhThu.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTraMatBang.resx">
       <DependentUpon>FrmTraMatBang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrangChu.resx">
+      <DependentUpon>FrmTrangChu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmXuLyViPham.resx">
       <DependentUpon>FrmXuLyViPham.cs</DependentUpon>
@@ -311,8 +326,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Images\" />
     <Folder Include="Uploads\ImagesNV\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\DS-1F.png" />
+    <Content Include="Images\DS-2F.png" />
+    <Content Include="Images\DS-3F.png" />
+    <Content Include="Images\DS-GF.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

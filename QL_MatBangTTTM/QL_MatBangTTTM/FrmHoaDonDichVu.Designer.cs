@@ -33,6 +33,7 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSua = new DevExpress.XtraBars.BarButtonItem();
             this.btnLuu = new DevExpress.XtraBars.BarButtonItem();
             this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -131,9 +132,10 @@
             this.barButtonItem1,
             this.btnThem,
             this.btnLuu,
-            this.btnHuy});
+            this.btnHuy,
+            this.btnSua});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 4;
+            this.barManager1.MaxItemId = 5;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -144,6 +146,7 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnSua),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnLuu),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnHuy)});
             this.bar2.OptionsBar.MultiLine = true;
@@ -158,6 +161,15 @@
             this.btnThem.Name = "btnThem";
             this.btnThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Caption = "Sửa hóa đơn";
+            this.btnSua.Id = 4;
+            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
+            this.btnSua.Name = "btnSua";
+            this.btnSua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnLuu
             // 
@@ -443,12 +455,12 @@
             this.tableLayoutPanel5.Location = new System.Drawing.Point(3, 17);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 6;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.952962F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.82405F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.82405F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.82405F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.52941F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.23529F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 3.868254F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.42067F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.42067F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.42067F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.0252F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 17.84453F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(1256, 202);
             this.tableLayoutPanel5.TabIndex = 4;
             // 
@@ -516,6 +528,7 @@
             // txtMaDK
             // 
             this.txtMaDK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtMaDK.EditValue = "";
             this.txtMaDK.Location = new System.Drawing.Point(198, 52);
             this.txtMaDK.MenuManager = this.barManager1;
             this.txtMaDK.Name = "txtMaDK";
@@ -523,7 +536,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtMaDK.Properties.DisplayMember = "MaThueMB";
             this.txtMaDK.Properties.ImmediatePopup = true;
-            this.txtMaDK.Properties.NullText = "Hãy chọn mã đăng ký";
+            this.txtMaDK.Properties.NullText = "";
             this.txtMaDK.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
             this.txtMaDK.Properties.PopupFormMinSize = new System.Drawing.Size(420, 0);
             this.txtMaDK.Properties.PopupView = this.gridLookUpEdit1View;
@@ -627,10 +640,10 @@
             // 
             this.btnHuyThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHuyThem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHuyThem.ImageOptions.Image")));
-            this.btnHuyThem.Location = new System.Drawing.Point(3, 5);
+            this.btnHuyThem.Location = new System.Drawing.Point(3, 3);
             this.btnHuyThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuyThem.Name = "btnHuyThem";
-            this.btnHuyThem.Size = new System.Drawing.Size(60, 21);
+            this.btnHuyThem.Size = new System.Drawing.Size(60, 25);
             this.btnHuyThem.TabIndex = 2;
             this.btnHuyThem.Text = "Hủy";
             this.btnHuyThem.Visible = false;
@@ -640,10 +653,10 @@
             // 
             this.btnNhapLai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNhapLai.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapLai.ImageOptions.Image")));
-            this.btnNhapLai.Location = new System.Drawing.Point(80, 5);
+            this.btnNhapLai.Location = new System.Drawing.Point(80, 3);
             this.btnNhapLai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNhapLai.Name = "btnNhapLai";
-            this.btnNhapLai.Size = new System.Drawing.Size(60, 21);
+            this.btnNhapLai.Size = new System.Drawing.Size(60, 25);
             this.btnNhapLai.TabIndex = 1;
             this.btnNhapLai.Text = "Nhập lại";
             this.btnNhapLai.Visible = false;
@@ -653,10 +666,10 @@
             // 
             this.btnLuuNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLuuNV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuNV.ImageOptions.Image")));
-            this.btnLuuNV.Location = new System.Drawing.Point(157, 5);
+            this.btnLuuNV.Location = new System.Drawing.Point(157, 3);
             this.btnLuuNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuuNV.Name = "btnLuuNV";
-            this.btnLuuNV.Size = new System.Drawing.Size(60, 21);
+            this.btnLuuNV.Size = new System.Drawing.Size(60, 25);
             this.btnLuuNV.TabIndex = 0;
             this.btnLuuNV.Text = "Lưu";
             this.btnLuuNV.Visible = false;
@@ -842,6 +855,7 @@
             this.cboTrangThai.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboTrangThai.Properties.Items.AddRange(new object[] {
+            "Chưa thanh toán",
             "Đã thanh toán"});
             this.cboTrangThai.Properties.ReadOnly = true;
             this.cboTrangThai.Size = new System.Drawing.Size(220, 20);
@@ -963,5 +977,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colKhachHang;
         private DevExpress.XtraGrid.Columns.GridColumn colViTri;
         private DevExpress.XtraGrid.Columns.GridColumn colKhachHangThue;
+        private DevExpress.XtraBars.BarButtonItem btnSua;
     }
 }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using Model;
+
 namespace BLL
 {
     public class BLL_TraMatBang
@@ -13,7 +15,7 @@ namespace BLL
         {
             return tmb.LayDSDangThueMatBang();
         }
-        public List<TraMatBang> LayDSTraMatBang()
+        public List<TraMatBangModel> LayDSTraMatBang()
         {
             return tmb.LayDSTraMatBang();
         }
@@ -28,6 +30,10 @@ namespace BLL
         public List<ThueMatBang> LayAllDSDangThueMatBang()
         {
             return tmb.LayAllDSDangThueMatBang();
+        }
+        public int TinhTienHoanLai(string ma)
+        {
+            return tmb.TinhTienHoanLai(ma);
         }
     }
 }

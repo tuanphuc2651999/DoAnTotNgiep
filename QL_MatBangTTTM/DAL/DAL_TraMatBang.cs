@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,13 +12,28 @@ namespace DAL
         DBQL_MatBangTTTMDataContext db = new DBQL_MatBangTTTMDataContext();
         public List<ThueMatBang> LayDSDangThueMatBang()
         {
-            var ds = db.ThueMatBangs.Where(t => t.TinhTrang == 1);
+            var ds = db.ThueMatBangs.Where(t => t.TinhTrang == 1).OrderBy(t=>t.DangKyThue.MatBang);
             return ds.ToList();
         }
-        public List<TraMatBang> LayDSTraMatBang()
+        public List<TraMatBangModel> LayDSTraMatBang()
         {
-            var ds = db.TraMatBangs.Select(t => t);
+            var ds = from t in db.TraMatBangs
+                     select new TraMatBangModel
+                     {
+                         MaNhanVien = t.MaNhanVien,
+                         MaTraMatBang = t.MaTraMatBang,
+                         NgayLap = string.Format("{0:dd/MM/yyyy}", t.NgayLap) ,
+                         TienHoanLai = string.Format("{0:0,0 vnđ}", t.TienHoanLai),
+                         NgayTra = string.Format("{0:dd/MM/yyyy}", t.NgayTra),
+                         TinhTrang = t.TinhTrang,
+                         ThueMB = t.ThueMB,
+                         ViTri = t.ThueMatBang.DangKyThue.MatBang1.ViTri.ToString(),
+                         MaKH = t.ThueMatBang.DangKyThue.MaKhachHang,
+                         MaMB=t.ThueMatBang.DangKyThue.MatBang
+                     };
             return ds.ToList();
+
+
         }
         public string LayMaTraMatBangTuSinh()
         {
@@ -58,6 +74,24 @@ namespace DAL
         {
             var ds = db.ThueMatBangs.Select(t=>t);
             return ds.ToList();
+        }
+        public int TinhTienHoanLai(string maThue)
+        {
+            var tienDV = db.PhieuDichVus.Where(t => t.MaThueMB == maThue && t.TinhTrang!=1)
+                .Select(t => t.TongTien);
+            var tienVP = db.HoSoViPhams.Where(t => t.MaThueMB == maThue && t.TinhTrang != 1&& t.TongTienPhat>0)
+                .Select(t => t.TongTienPhat);
+            int tiencoc = (int)db.ThueMatBangs.Where(t => t.MaThueMB == maThue).Select(t => t.HoaDonTienCoc1.SoTien).FirstOrDefault();
+            int tongtien=0;
+            foreach (var item in tienDV)
+            {
+                tongtien += (int)item;
+            }
+            foreach (var item in tienVP)
+            {
+                tongtien += (int)item;
+            }
+            return tiencoc - tongtien;
         }
     }
 }

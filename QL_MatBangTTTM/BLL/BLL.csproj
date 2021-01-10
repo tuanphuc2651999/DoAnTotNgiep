@@ -46,6 +46,7 @@
     <Compile Include="BLL_PhanQuyen.cs" />
     <Compile Include="BLL_ThueMatBang.cs" />
     <Compile Include="BLL_TraMatBang.cs" />
+    <Compile Include="BLL_XuLyViPham.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

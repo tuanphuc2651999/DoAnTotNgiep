@@ -24,12 +24,17 @@ namespace QL_MatBangTTTM
         int phiDV = 0;
         string maHD;
         int soNamDaThanhToan = 0;
-        bool check = true;
+        bool check = false;
+        bool check2 = false;
+        DateTime ngayHetHan;
+        DateTime ngayThue;
         string maNV;
+        List<string> listHoaDon;
         public FrmThueMatBang(string maNV)
         {
             InitializeComponent();
             this.maNV = maNV;
+            listHoaDon = new List<string>();
         }
         public void choNhapTextBox(bool tinhTrang)
         {
@@ -47,6 +52,7 @@ namespace QL_MatBangTTTM
             btnNhapLai.Visible = true;          
             btnHuyThem.Visible = true;
             check = true;
+            check2 = false;
             choNhapTextBox(false);
             //checkTaoTK.Visible = true;
         }
@@ -60,6 +66,7 @@ namespace QL_MatBangTTTM
             btnNhapLai.Visible = true;
             btnHuyThem.Visible = true;
             check = false;
+            check2 = true;
             txtThoiHanThue.ReadOnly = false;
             txtThoiHanThue.Focus();               
         }
@@ -72,7 +79,8 @@ namespace QL_MatBangTTTM
             btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnLuuNV.Visible = false;
             btnNhapLai.Visible = false;
-            check = true;
+            check = false;
+            check2 = false;
             btnHuyThem.Visible = false;
             choNhapTextBox(true);
             //choNhapTextBox(true);
@@ -86,6 +94,8 @@ namespace QL_MatBangTTTM
             btnLuuNV.Visible = false;
             btnNhapLai.Visible = false;     
             btnHuyThem.Visible = false;
+            check = false;
+            check2 = false;
             choNhapTextBox(true);
             //choNhapTextBox(true);        
         }
@@ -93,9 +103,9 @@ namespace QL_MatBangTTTM
         {
             TaoMoi();
             LoadDSDKThue();
-            check = false;
             txtMaDK.Focus();
             Click_BtnThem();
+            txtMaDK.EditValue = null;
 
         }
         public void LoadDSThue()
@@ -138,7 +148,7 @@ namespace QL_MatBangTTTM
             txtNamDaThanhToan.EditValue = 0;
             txtTienCoc.EditValue = 0;
             txtMaMB.EditValue = "";
-            txtMaDK.EditValue = "";
+            txtMaDK.EditValue = null;
         }
         private void LayThongTinDKThue(string ma)
         {
@@ -148,9 +158,10 @@ namespace QL_MatBangTTTM
                 var mb = thueMB.LayThongTinMB(tt.MatBang);
                 var kh = khachHang.LayTTKhachHang(tt.MaKhachHang);
                 var hoaDon = thueMB.HoaDon(ma);
-                DateTime ngayHetHan;
-                DateTime ngayThue = (DateTime)tt.NgayMoCua;
-                ngayHetHan = ngayThue.AddYears(1);
+                thoiHanThue = (int)tt.ThoiHanThue;
+                txtThoiHanThue.EditValue = thoiHanThue;
+                ngayThue = (DateTime)tt.NgayMoCua;
+                ngayHetHan = ngayThue.AddYears(int.Parse(txtThoiHanThue.EditValue.ToString()));
                 txtNgayThue.EditValue = tt.NgayMoCua;
                 txtNgayHetHan.EditValue = ngayHetHan;
                 txtThoiHanThue.EditValue =tt.ThoiHanThue;
@@ -170,7 +181,7 @@ namespace QL_MatBangTTTM
                 txtViTri.EditValue = mb.ViTri;
                 txtDienTich.EditValue = string.Format("{0:0 (m2)}", mb.DienTich);
                 //tienCoc = (int)hoaDon.SoTien;
-                thoiHanThue = (int)tt.ThoiHanThue;
+                
                 phiDV = (int)thueMB.PhiDichVu((int)mb.DienTich);
                 if (string.IsNullOrEmpty(dgvDSThueMatBang.GetFocusedRowCellDisplayText(colDaThanhToan).ToString()))
                     txtNamDaThanhToan.EditValue = 0;
@@ -179,11 +190,11 @@ namespace QL_MatBangTTTM
             }               
         }
         public void LoadLaiDS()
-        {
-            LoadDSThue();
+        {           
             LoadDSDKThue();
             LoadTienThue();
             LoadCboDangKyAll();
+            LoadDSThue();
         }
         private void FrmThueMatBang_Load(object sender, EventArgs e)
         {
@@ -192,11 +203,24 @@ namespace QL_MatBangTTTM
 
         private void txtMaDK_EditValueChanged(object sender, EventArgs e)
         {
-            LayThongTinDKThue(txtMaDK.EditValue.ToString());
+            if (txtMaDK.EditValue == null)
+            {
+                TaoMoi();
+                return;
+            }
+            if(string.IsNullOrEmpty(txtMaDK.Text))
+            {
+
+                TaoMoi();
+                return;
+            }    
+            LayThongTinDKThue(txtMaDK.Text);
         }
 
         private void btnLuu_ItemClick(object sender, ItemClickEventArgs e)
         {
+            int row = dgvDSThueMatBang.FocusedRowHandle;
+            int s = dgvDSThueMatBang.RowCount;
             errorProvider1.Clear();
             if (string.IsNullOrEmpty(txtMaDK.EditValue.ToString()))
             {
@@ -232,8 +256,10 @@ namespace QL_MatBangTTTM
                     return;
                 }
                 MessageBox.Show("Thêm thành công");
+                listHoaDon.Clear();
                 Click_BtnLuu();
                 LoadLaiDS();
+                dgvDSThueMatBang.FocusedRowHandle = dgvDSThueMatBang.RowCount;
             }
             else
             {
@@ -245,28 +271,34 @@ namespace QL_MatBangTTTM
                 MessageBox.Show("Sửa thành công");
                 Click_BtnLuu();
                 txtThoiHanThue.ReadOnly = true;
-                dgvDSThueMatBang.Focus();
+                dgvDSThueMatBang.Focus();              
                 LoadLaiDS();
-            }    
-            
-           
+                dgvDSThueMatBang.FocusedRowHandle = row;
+            }
+            //dgvDSThueMatBang_FocusedRowChanged(null, null) ;          
         }
 
         private void dgvDSThueMatBang_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (check == false)
+            if (check)
+            {
                 return;
+                txtMaDK.EditValue = null;
+            }    
+               
             string maDK = dgvDSThueMatBang.GetFocusedRowCellValue(colMaDKThue).ToString();
             txtMaDK.EditValue = maDK;
             txtMaThue.EditValue= dgvDSThueMatBang.GetFocusedRowCellValue(colMaThue).ToString();
             txtThoiHanThue.EditValue= dgvDSThueMatBang.GetFocusedRowCellValue(colThoiHanThue).ToString();
             txtNhanVien.EditValue = dgvDSThueMatBang.GetFocusedRowCellValue(colNhanVien).ToString();          
             txtNgayLap.EditValue=Commons.ConvertStringToDate(dgvDSThueMatBang.GetFocusedRowCellDisplayText(colNgayLap));
-            txtTrangThai.Text= dgvDSThueMatBang.GetFocusedRowCellValue(colTrangThai).ToString();           
+            txtTrangThai.Text= dgvDSThueMatBang.GetFocusedRowCellValue(colTrangThai).ToString();          
+            txtNgayHetHan.Text= dgvDSThueMatBang.GetFocusedRowCellValue(colNgayTra).ToString();
         }
 
         private void btnHuy_ItemClick(object sender, ItemClickEventArgs e)
         {
+            errorProvider1.Clear();
             Click_BtnHuy();
             LoadCboDangKyAll();
             dgvDSThueMatBang_FocusedRowChanged(null, null);
@@ -282,8 +314,12 @@ namespace QL_MatBangTTTM
         {
             FrmTaoHoaDonTienCoc hoaDonTT = new FrmTaoHoaDonTienCoc(txtMaDK.EditValue.ToString(), txtMaMB.EditValue.ToString()) ;
             hoaDonTT.ShowDialog();
+            string s = hoaDonTT.MaHoaDon();
+            if (!string.IsNullOrEmpty(hoaDonTT.MaHoaDon()))
+                listHoaDon.Add(hoaDonTT.MaHoaDon());
             string maDK = txtMaDK.EditValue.ToString();
             LayThongTinDKThue(maDK);
+            
         }
 
         private void txtTienCoc_EditValueChanged(object sender, EventArgs e)
@@ -304,9 +340,9 @@ namespace QL_MatBangTTTM
 
         private void txtThoiHanThue_EditValueChanged(object sender, EventArgs e)
         {
-            if (check)
-                return;
             errorProvider1.Clear();
+            if (!check2)
+                return;       
             if (int.Parse(txtThoiHanThue.EditValue.ToString())< int.Parse(dgvDSThueMatBang.GetFocusedRowCellValue(colThoiHanThue).ToString()))
             {
                 MessageBox.Show("Thời hạn thuê chỉnh sửa không thể bé hơn thời gian thuê lúc trước");
@@ -314,7 +350,10 @@ namespace QL_MatBangTTTM
                 errorProvider1.SetError(txtThoiHanThue, "Hãy chọn lại thời hạn thuê");
                 txtThoiHanThue.Focus();
                 return;
-            }    
+            }
+
+           DateTime  ngayHetHanNew = ngayThue.AddYears(int.Parse(txtThoiHanThue.EditValue.ToString()));
+            txtNgayHetHan.EditValue = ngayHetHanNew;
         }
 
         private void btnLuuNV_Click(object sender, EventArgs e)
@@ -324,6 +363,13 @@ namespace QL_MatBangTTTM
 
         private void btnNhapLai_Click(object sender, EventArgs e)
         {
+           if(listHoaDon.Count>0)
+            {
+                if (thueMB.XoaHoaDon(listHoaDon[0].ToString()))
+                {
+                    listHoaDon.Clear();
+                }                                  
+            }
             TaoMoi();
         }
 

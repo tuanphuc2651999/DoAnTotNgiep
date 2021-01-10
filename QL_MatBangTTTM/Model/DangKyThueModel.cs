@@ -41,6 +41,8 @@ namespace Model
                 {
                     return "Đã xử lý";
                 }
+                if (this.TinhTrang == 3)
+                    return "Hết hạn";
                 return "Chưa xử lý";
             }
         }
@@ -54,6 +56,7 @@ namespace Model
 
         public DateTime? NgayHetHan { get; set; }
         public string MaHD { get; set; }
+        public int? ViTri { get; set; }
     }
     public class MatBangModel
     {

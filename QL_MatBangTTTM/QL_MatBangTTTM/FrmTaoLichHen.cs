@@ -141,5 +141,10 @@ namespace QL_MatBangTTTM
             }    
             //DateTime gioKT = (DateTime)txtGioKetThuc.EditValue;
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
