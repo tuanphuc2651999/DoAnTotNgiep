@@ -19,9 +19,10 @@ namespace QL_MatBangTTTM
             // Application.Run(new FrmTraMatBang("AEON_NV0001"));
             // Application.Run(new FrmDangNhap());
             // Application.Run(new FrmTaoHoaDonTienCoc());
-             Application.Run(new FrmTaiKhoanKhachHang());
+            // Application.Run(new FrmTaiKhoanKhachHang());
             // Application.Run(new FrmNhanVien(""));
             // Application.Run(new FrmMain(""));
+             Application.Run(new FrmTaiKhoanNV(""));
 
         }
     }

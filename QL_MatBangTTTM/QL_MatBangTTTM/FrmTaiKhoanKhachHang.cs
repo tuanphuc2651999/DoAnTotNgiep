@@ -35,11 +35,12 @@ namespace QL_MatBangTTTM
         private void FrmTaiKhoanKhachHang_Load(object sender, EventArgs e)
         {
             btnLuu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnXoa.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-            btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
 
-            
+
 
             cboMaKhachHang.ReadOnly = true;
             cboTinhTrang.ReadOnly = true;
@@ -99,8 +100,10 @@ namespace QL_MatBangTTTM
         {
             btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnXoa.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnLuu.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            
 
             dgvDSTaiKhoanKH.ClearSelection();
 
@@ -223,8 +226,11 @@ namespace QL_MatBangTTTM
 
         private void dgvDSTaiKhoanKH_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            LayTatCaKhachHangLenCbo();
-            LayThongTinLenTextBox();
+            if (dgvDSTaiKhoanKH.FocusedRowHandle >= 0 && btnThem.Visibility == DevExpress.XtraBars.BarItemVisibility.Always)
+            {
+                LayTatCaKhachHangLenCbo();
+                LayThongTinLenTextBox();
+            }
         }
 
         private void cboMaKhachHang_EditValueChanged(object sender, EventArgs e)
@@ -255,7 +261,7 @@ namespace QL_MatBangTTTM
                     tk.TaiKhoan = txtTK.EditValue.ToString().Trim();
                     if (khachHang.XoaTaiKhoanKhachHang(tk))
                     {
-                        MessageBox.Show("Xóa tài khoản khách hàng thành công" + cboMaKhachHang.EditValue.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Khóa tài khoản khách hàng thành công" + cboMaKhachHang.EditValue.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         FrmTaiKhoanKhachHang_Load(null, null);
                         //SplashScreenManager.CloseDefaultSplashScreen();
                     }

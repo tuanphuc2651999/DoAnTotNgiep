@@ -41,7 +41,6 @@ namespace Model
         {
             get
             {
-                // return this.TinhTrang == (int)StatusTaiKhoan.Active ? "Đang hoạt động" : "Ngưng hoạt động";
                 if (this.TinhTrang == (int)StatusTaiKhoan.Active)
                     return "Đang hoạt động";
                 else if (this.TinhTrang == (int)StatusTaiKhoan.NewAccount)

@@ -34,5 +34,17 @@ namespace Model
         public string Email { get; set; }
         public int? TinhTrang { get; set; }
         public string TenNhanVien { get; set; }
+        public string TinhTrangAsString
+        {
+            get
+            {
+                if (this.TinhTrang == (int)StatusTaiKhoan.Active)
+                    return "Đang hoạt động";
+                else if (this.TinhTrang == (int)StatusTaiKhoan.NewAccount)
+                    return "Tài khoản mới";
+                else
+                    return "Bị Khóa";
+            }
+        }
     }
 }

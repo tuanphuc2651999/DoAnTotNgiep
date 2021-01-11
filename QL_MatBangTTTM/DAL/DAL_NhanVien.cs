@@ -46,6 +46,36 @@ namespace DAL
 
         }
 
+        public List<NhanVienModel> layDSTatCaNhanVien()
+        {
+            try
+            {
+                var nhanViens = (from nv in db.NhanViens
+                                 where nv.TinhTrang == 1
+                                 select new NhanVienModel
+                                 {
+                                     MaNV = nv.MaNhanVien,
+                                     HoTenNV = nv.HoTenNV,
+                                     NgayVL = (DateTime)nv.NgayVL,
+                                     DiaChi = nv.DiaChi,
+                                     GioiTinh = nv.GioiTinh,
+                                     NgaySinh = (DateTime)nv.NgaySinh,
+                                     SDT = nv.SDT,
+                                     DuongDanHinh = nv.DuongDanHinh,
+                                     TinhTrang = (int)nv.TinhTrang,
+                                     CMND = nv.CMND,
+                                     Email = nv.Email
+                                 });
+
+                return nhanViens.ToList();
+            }
+            catch (Exception exe)
+            {
+                throw;
+            }
+
+        }
+
         public List<TaiKhoanNVModel> layDSTKNhanVien()
         {
             var taiKhoans = from tk in db.TaiKhoanNVs
@@ -217,7 +247,69 @@ namespace DAL
                 throw;
             }           
         }
+        public List<NhanVienModel> layDSNhanVienKhongCoTaiKhoan()
+        {
+            var nhanvien = from nv in db.NhanViens
+                            where nv.TinhTrang == 1 &&
+                            !(from tknv in db.TaiKhoanNVs select tknv.TaiKhoan).Contains(nv.MaNhanVien)
+                            select new NhanVienModel
+                            {
+                                MaNV = nv.MaNhanVien,
+                                HoTenNV = nv.HoTenNV,
+                                CMND = nv.CMND,
+                                DiaChi = nv.DiaChi,
+                                GioiTinh = nv.GioiTinh,
+                                NgaySinh = (DateTime)nv.NgaySinh,
+                                SDT = nv.SDT,
+                                Email = nv.Email,
+                                DuongDanHinh = nv.DuongDanHinh,
+                                TinhTrang = (int)nv.TinhTrang,
+                            };
+            return nhanvien.ToList();
+        }
+        public NhanVien LayTTNhanVien(string manv)
+        {
+            return db.NhanViens.Where(t => t.MaNhanVien == manv).Select(t => t).FirstOrDefault();
+        }
+        public int LayTinhTrangTaiKhoanNV(string ma)
+        {
+            int tinhTrang = (int)db.TaiKhoanNVs.Where(t => t.TaiKhoan == ma).Select(t => t.TinhTrang).FirstOrDefault();
+            return tinhTrang;
+        }
+        public bool SuaTKNhanVien(TaiKhoanNV nv)
+        {
+            try
+            {
+                TaiKhoanNV taiKhoanNV = db.TaiKhoanNVs.FirstOrDefault(t => t.TaiKhoan.Equals(nv.TaiKhoan));
+                taiKhoanNV.TaiKhoan = nv.TaiKhoan;
+                taiKhoanNV.Email = nv.Email;
+                taiKhoanNV.MatKhau = nv.MatKhau;
+                taiKhoanNV.TinhTrang = nv.TinhTrang;
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
 
-        
+        public bool XoaTaiKhoanNhanVien(string ma)
+        {
+            try
+            {
+                TaiKhoanNV taiKhoanNV = db.TaiKhoanNVs.FirstOrDefault(t => t.TaiKhoan.Equals(ma));
+                taiKhoanNV.TinhTrang = -1;
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+        }
+
     }
 }
