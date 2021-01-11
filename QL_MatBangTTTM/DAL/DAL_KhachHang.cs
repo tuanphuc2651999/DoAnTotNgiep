@@ -223,7 +223,7 @@ namespace DAL
             try
             {
                 TaiKhoanKH tkkh = db.TaiKhoanKHs.Where(x => x.TaiKhoan.Equals(tk.TaiKhoan)).FirstOrDefault();
-                tkkh.TinhTrang = 0;
+                tkkh.TinhTrang = -1;
                 db.SubmitChanges();
                 return true;
             }
@@ -232,6 +232,11 @@ namespace DAL
                 return false;
                 throw;
             }
+        }
+        public int LayTinhTrangTaiKhoanKH(string ma)
+        {
+            int tinhTrang =(int)db.TaiKhoanKHs.Where(t => t.MaKhachHang == ma).Select(t => t.TinhTrang).FirstOrDefault();
+            return tinhTrang;
         }
     }
 }

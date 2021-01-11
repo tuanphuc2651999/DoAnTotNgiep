@@ -67,5 +67,10 @@ namespace BLL
         {
             return khachHang.XoaTaiKhoanKhachHang(tk);
         }
+        public int LayTinhTrangTaiKhoanKH(string maKH)
+        {
+            return khachHang.LayTinhTrangTaiKhoanKH(maKH);
+        }
+
     }
 }
