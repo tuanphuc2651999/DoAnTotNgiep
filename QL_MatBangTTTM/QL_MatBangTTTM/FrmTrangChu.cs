@@ -64,9 +64,9 @@ namespace QL_MatBangTTTM
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(424, 61);
+            this.label1.Location = new System.Drawing.Point(339, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(638, 31);
+            this.label1.Size = new System.Drawing.Size(807, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chào mừng bạn đến với phần mền quản lý mặt bằng";
             // 
@@ -98,9 +98,9 @@ namespace QL_MatBangTTTM
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(261, 32);
+            this.label2.Location = new System.Drawing.Point(205, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(363, 25);
+            this.label2.Size = new System.Drawing.Size(476, 31);
             this.label2.TabIndex = 2;
             this.label2.Text = "DANH SÁCH SINH VIÊN THỰC HIỆN";
             // 
@@ -108,9 +108,9 @@ namespace QL_MatBangTTTM
             // 
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 122);
+            this.label7.Location = new System.Drawing.Point(3, 119);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(880, 25);
+            this.label7.Size = new System.Drawing.Size(880, 31);
             this.label7.TabIndex = 7;
             this.label7.Text = "SINH VIÊN THỰC HIỆN : TRẦN TUẤN PHÚC";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -119,9 +119,9 @@ namespace QL_MatBangTTTM
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 212);
+            this.label8.Location = new System.Drawing.Point(3, 209);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(880, 25);
+            this.label8.Size = new System.Drawing.Size(880, 31);
             this.label8.TabIndex = 8;
             this.label8.Text = "MÃ SINH VIÊN : 2001170404";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -130,9 +130,9 @@ namespace QL_MatBangTTTM
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(3, 302);
+            this.label9.Location = new System.Drawing.Point(3, 299);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(880, 25);
+            this.label9.Size = new System.Drawing.Size(880, 31);
             this.label9.TabIndex = 9;
             this.label9.Text = "SINH VIÊN THỰC HIỆN : PHẠM QUANG HUY";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -141,11 +141,11 @@ namespace QL_MatBangTTTM
             // 
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(3, 394);
+            this.label10.Location = new System.Drawing.Point(3, 391);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(880, 25);
+            this.label10.Size = new System.Drawing.Size(880, 31);
             this.label10.TabIndex = 10;
-            this.label10.Text = "MÃ SINH VIÊN : ";
+            this.label10.Text = "MÃ SINH VIÊN : 2001170076";
             // 
             // FrmTrangChu
             // 

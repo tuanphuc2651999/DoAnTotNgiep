@@ -67,6 +67,7 @@
             this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTinhTrang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -97,9 +98,10 @@
             this.btnThem,
             this.btnXoa,
             this.btnSua,
-            this.btnLuu});
+            this.btnLuu,
+            this.btnHuy});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 4;
+            this.barManager1.MaxItemId = 5;
             this.barManager1.StatusBar = this.bar3;
             // 
             // bar2
@@ -112,7 +114,8 @@
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThem),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXoa),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSua),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnLuu)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnLuu),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnHuy)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
@@ -128,7 +131,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Caption = "Xóa tài khoản";
+            this.btnXoa.Caption = "Khóa tài khoản";
             this.btnXoa.Id = 1;
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
@@ -303,6 +306,7 @@
             this.txtTK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTK.MenuManager = this.barManager1;
             this.txtTK.Name = "txtTK";
+            this.txtTK.Properties.ReadOnly = true;
             this.txtTK.Size = new System.Drawing.Size(155, 22);
             this.txtTK.TabIndex = 8;
             // 
@@ -313,6 +317,7 @@
             this.txtMatKhau.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMatKhau.MenuManager = this.barManager1;
             this.txtMatKhau.Name = "txtMatKhau";
+            this.txtMatKhau.Properties.ReadOnly = true;
             this.txtMatKhau.Size = new System.Drawing.Size(155, 22);
             this.txtMatKhau.TabIndex = 9;
             // 
@@ -361,7 +366,6 @@
             // 
             this.cboMaKhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cboMaKhachHang.EditValue = "0";
-            this.cboMaKhachHang.Enabled = false;
             this.cboMaKhachHang.Location = new System.Drawing.Point(88, 8);
             this.cboMaKhachHang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cboMaKhachHang.MenuManager = this.barManager1;
@@ -371,6 +375,7 @@
             this.cboMaKhachHang.Properties.DisplayMember = "MaKH";
             this.cboMaKhachHang.Properties.NullText = "";
             this.cboMaKhachHang.Properties.PopupView = this.gridView2;
+            this.cboMaKhachHang.Properties.ReadOnly = true;
             this.cboMaKhachHang.Properties.ValueMember = "MaKH";
             this.cboMaKhachHang.Size = new System.Drawing.Size(155, 22);
             this.cboMaKhachHang.TabIndex = 12;
@@ -410,6 +415,7 @@
             this.cboTinhTrang.Name = "cboTinhTrang";
             this.cboTinhTrang.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cboTinhTrang.Properties.ReadOnly = true;
             this.cboTinhTrang.Size = new System.Drawing.Size(155, 22);
             this.cboTinhTrang.TabIndex = 13;
             // 
@@ -452,6 +458,7 @@
             this.dgvDSTaiKhoanKH.DetailHeight = 431;
             this.dgvDSTaiKhoanKH.GridControl = this.gCDSTaiKhoanKH;
             this.dgvDSTaiKhoanKH.Name = "dgvDSTaiKhoanKH";
+            this.dgvDSTaiKhoanKH.OptionsBehavior.ReadOnly = true;
             this.dgvDSTaiKhoanKH.OptionsFind.AlwaysVisible = true;
             this.dgvDSTaiKhoanKH.OptionsFind.FindNullPrompt = "Nhập dữ liệu cần tìm";
             this.dgvDSTaiKhoanKH.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.Never;
@@ -517,6 +524,16 @@
             this.colMaKH.Visible = true;
             this.colMaKH.VisibleIndex = 5;
             this.colMaKH.Width = 94;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Caption = "Hủy";
+            this.btnHuy.Id = 4;
+            this.btnHuy.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnHuy.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuy_ItemClick);
             // 
             // FrmTaiKhoanKhachHang
             // 
@@ -591,5 +608,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn colMaKH;
         private DevExpress.XtraEditors.ComboBoxEdit cboTinhTrang;
+        private DevExpress.XtraBars.BarButtonItem btnHuy;
     }
 }

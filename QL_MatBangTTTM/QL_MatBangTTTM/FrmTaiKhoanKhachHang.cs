@@ -34,14 +34,19 @@ namespace QL_MatBangTTTM
 
         private void FrmTaiKhoanKhachHang_Load(object sender, EventArgs e)
         {
-            btnLuu.Enabled = false;
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            cboMaKhachHang.Enabled = false;
-            cboTinhTrang.Enabled = false;
-            txtMatKhau.Enabled = true;
-            txtEmail.Enabled = true;
-            txtTK.Enabled = false;
+            btnLuu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnXoa.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+
+
+
+            cboMaKhachHang.ReadOnly = true;
+            cboTinhTrang.ReadOnly = true;
+            txtMatKhau.ReadOnly = false;
+            txtEmail.ReadOnly = true;
+            txtTK.ReadOnly = true;
 
             BindingList<TaiKhoanKHModel> bindingList = new BindingList<TaiKhoanKHModel>(khachHang.layDSTKKH());
             this.gCDSTaiKhoanKH.DataSource = bindingList;
@@ -93,9 +98,12 @@ namespace QL_MatBangTTTM
 
         private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
         {
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
-            btnLuu.Enabled = true;
+            btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnXoa.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            btnLuu.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            
 
             dgvDSTaiKhoanKH.ClearSelection();
 
@@ -107,12 +115,12 @@ namespace QL_MatBangTTTM
 
             //Tạo mới mật khẩu với số bất kì
             txtMatKhau.EditValue = random.Next(999999).ToString();
-            txtMatKhau.Enabled = false;
+            txtMatKhau.ReadOnly = true;
 
             cboTinhTrang.Text = "0";
-            cboTinhTrang.Enabled = false;
+            cboTinhTrang.ReadOnly = true;
 
-            cboMaKhachHang.Enabled = true;
+            cboMaKhachHang.ReadOnly = false;
             cboMaKhachHang.Reset();
             LayKhachHangKhongCoTaiKhoan();
             cboMaKhachHang.EditValue = cboMaKhachHang.Properties.GetKeyValue(0);
@@ -196,7 +204,7 @@ namespace QL_MatBangTTTM
                 tk.MatKhau = txtMatKhau.EditValue.ToString().Trim();
                 tk.Email = txtEmail.EditValue.ToString().Trim();
                 tk.MaKhachHang = cboMaKhachHang.EditValue.ToString().Trim();
-                tk.TinhTrang = Convert.ToInt32(cboTinhTrang.EditValue.ToString().Trim());
+                tk.TinhTrang = khachHang.LayTinhTrangTaiKhoanKH(tk.MaKhachHang);
                 if (khachHang.SuaTaiKhoanKhachHang(tk))
                 {
                     MessageBox.Show("Sửa tài khoản thành công với mã khách hàng: " + cboMaKhachHang.EditValue.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -211,14 +219,18 @@ namespace QL_MatBangTTTM
             catch (Exception ex)
             {
                 string error = ex.ToString();
+                MessageBox.Show("Sửa tài khoản ádfasdfasdfa không thành công với mã khách hàng: " + cboMaKhachHang.EditValue.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 FrmTaiKhoanKhachHang_Load(null, null);
             }
         }
 
         private void dgvDSTaiKhoanKH_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            LayTatCaKhachHangLenCbo();
-            LayThongTinLenTextBox();
+            if (dgvDSTaiKhoanKH.FocusedRowHandle >= 0 && btnThem.Visibility == DevExpress.XtraBars.BarItemVisibility.Always)
+            {
+                LayTatCaKhachHangLenCbo();
+                LayThongTinLenTextBox();
+            }
         }
 
         private void cboMaKhachHang_EditValueChanged(object sender, EventArgs e)
@@ -249,7 +261,7 @@ namespace QL_MatBangTTTM
                     tk.TaiKhoan = txtTK.EditValue.ToString().Trim();
                     if (khachHang.XoaTaiKhoanKhachHang(tk))
                     {
-                        MessageBox.Show("Xóa tài khoản khách hàng thành công" + cboMaKhachHang.EditValue.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Khóa tài khoản khách hàng thành công" + cboMaKhachHang.EditValue.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         FrmTaiKhoanKhachHang_Load(null, null);
                         //SplashScreenManager.CloseDefaultSplashScreen();
                     }
@@ -265,6 +277,11 @@ namespace QL_MatBangTTTM
             {
                 string error = ex.ToString();
             }
+        }
+
+        private void btnHuy_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmTaiKhoanKhachHang_Load(null, null);
         }
     }
 }

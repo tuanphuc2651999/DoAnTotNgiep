@@ -28,7 +28,7 @@ namespace BLL
         {
             return nhanVien.SuaNhanVien(nv);
         }
-        public string LayMaNVTuSinh() 
+        public string LayMaNVTuSinh()
         {
             return nhanVien.LayMaNVTuSinh();
         }
@@ -40,22 +40,22 @@ namespace BLL
         {
             return nhanVien.KiemTraNgayVaoLam(ngayVL);
         }
-        public bool KiemTraNgaySinh(DateTime ngaySinh,DateTime ngayVL)
+        public bool KiemTraNgaySinh(DateTime ngaySinh, DateTime ngayVL)
         {
             return nhanVien.KiemTraNgaySinh(ngaySinh, ngayVL);
         }
-        public bool KiemTraSDT(string sdt,string manv)
+        public bool KiemTraSDT(string sdt, string manv)
         {
             return nhanVien.KiemTraSDT(sdt, manv);
         }
-        public bool KiemTraCMND(string cmnd,string manv)
+        public bool KiemTraCMND(string cmnd, string manv)
         {
             return nhanVien.KiemTraCMND(cmnd, manv);
         }
-        public bool KiemTraEmail(string email,string manv)
+        public bool KiemTraEmail(string email, string manv)
         {
             return nhanVien.KiemTraEmail(email, manv);
-        }       
+        }
         public bool KiemTraEmailHopLe(string email)
         {
             return nhanVien.KiemTraEmailHopLe(email);
@@ -67,6 +67,30 @@ namespace BLL
         public bool ThemTKNhanVien(TaiKhoanNV nv)
         {
             return nhanVien.ThemTKNhanVien(nv);
+        }
+        public bool SuaTKNhanVien(TaiKhoanNV nv)
+        {
+            return nhanVien.SuaTKNhanVien(nv);
+        }
+        public List<NhanVienModel> layDSNhanVienKhongCoTaiKhoan()
+        {
+            return nhanVien.layDSNhanVienKhongCoTaiKhoan();
+        }
+        public NhanVien LayTTNhanVien(string ma)
+        {
+            return nhanVien.LayTTNhanVien(ma);
+        }
+        public int LayTinhTrangTaiKhoanNV(string ma)
+        {
+            return nhanVien.LayTinhTrangTaiKhoanNV(ma);
+        }
+        public List<NhanVienModel> layDSTatCaNhanVien()
+        {
+            return nhanVien.layDSTatCaNhanVien();
+        }
+        public bool XoaTaiKhoanNhanVien(string ma)
+        {
+            return nhanVien.XoaTaiKhoanNhanVien(ma);
         }
     }
 }
