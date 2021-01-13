@@ -48,9 +48,13 @@ namespace BLL
         {
             return mb.XoaMatBang(tt);
         }
-        //public bool SuaMatBang(MatBang tt)
-        //{
-        //    return mb.SuaMat
-        //}
+        public bool CapNhatGia()
+        {
+            return mb.CapNhatGia();
+        }
+        public bool SuaMatBang(MatBang m)
+        {
+            return SuaMatBang(m);
+        }
     }
 }

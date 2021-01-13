@@ -39,9 +39,9 @@ namespace QL_MatBangTTTM
             txtDienTich.ReadOnly = true;
             gLUEGia.ReadOnly = false;
             cboTinhTrang.ReadOnly = true;
-            gLUETang.ReadOnly = false;
-            gLUELoaiMB.ReadOnly = false;
-            gLUEKhuVuc.ReadOnly = false;
+            gLUETang.ReadOnly = true;
+            gLUELoaiMB.ReadOnly = true;
+            gLUEKhuVuc.ReadOnly = true;
 
             BindingList<TTMatBangModel> bindingList = new BindingList<TTMatBangModel>(matBang.LayDSTTMatBang());
             this.gCDSMatBang.DataSource = bindingList;
@@ -166,7 +166,33 @@ namespace QL_MatBangTTTM
 
         private void btnSua_ItemClick(object sender, ItemClickEventArgs e)
         {
-            // Sửa thuộc tính giá theo giá mới nhất của loại mặt bằng đó.
+            try
+            {
+                string maMB = txtMaMB.EditValue.ToString().Trim();
+                string maGia = gLUEGia.EditValue.ToString().Trim();
+
+                MatBang m = new MatBang();
+                m.MaMB = maMB;
+                m.Gia = maGia;
+                
+                if (matBang.SuaMatBang(m))
+                {
+                    MessageBox.Show("Cập nhật thành công mặt bằng " +maMB, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    FrmMatBang_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật không thành công mặt bằng " + maMB, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    FrmMatBang_Load(null, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                string error = ex.ToString();
+                MessageBox.Show("Cập nhật không thành công mặt bằng " + txtMaMB.EditValue.ToString().Trim(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                FrmMatBang_Load(null, null);
+                throw;
+            }
         }
 
         private void btnLuu_ItemClick(object sender, ItemClickEventArgs e)
@@ -204,7 +230,6 @@ namespace QL_MatBangTTTM
                         MessageBox.Show("TLưu mặt bằng " + mb.MaMB + " không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         FrmMatBang_Load(null, null);
                     }
-
                 }
                 else
                 {
@@ -236,13 +261,15 @@ namespace QL_MatBangTTTM
         {
             try
             {
-                // Cập nhật giá các mặt bằng còn trống theo giá mới nhất
-                // Phụ thuộc vào loại mặt bằng, thời gian, 
-                //
+                matBang.CapNhatGia();
+                MessageBox.Show("Cập nhật thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
+                FrmMatBang_Load(null, null);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                string error = ex.ToString();
+                MessageBox.Show("Cập nhật không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FrmMatBang_Load(null, null);
                 throw;
             }
         }

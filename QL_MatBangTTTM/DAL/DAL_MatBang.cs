@@ -81,6 +81,66 @@ namespace DAL
             }
         }
 
+        public bool CapNhatGia()
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(LayMaGiaThueCuoiCung()))
+                {
+                    try
+                    {
+                        string maGiaMoi = LayMaGiaThueCuoiCung();
+                        List<MatBang> dsMB = db.MatBangs.Where(t => t.TinhTrang == 0).ToList();
+                        foreach (MatBang m in dsMB)
+                        {
+                            MatBang mbl = db.MatBangs.Where(t => t.MaMB == m.MaMB).FirstOrDefault();
+                            mbl.Gia = maGiaMoi;
+                            db.SubmitChanges();
+                        }
+                        return true;
+                    }
+                    catch (Exception)
+                    {
+                        return false;
+                        throw;
+                    }
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                var a = ex.ToString();
+                return false;
+                throw;
+            }
+        }
+
+        private string LayMaGiaThueCuoiCung()
+        {
+            return db.GiaThues.OrderByDescending(gia => gia.MaGiaThue).Take(1).SingleOrDefault().MaGiaThue;
+            //return db.GiaThues.Select(t => t.MaGiaThue).LastOrDefault();
+        }
+
+        public bool SuaMatBang(MatBang m)
+        {
+            try
+            {
+                MatBang luu = db.MatBangs.Where(t => t.MaMB == m.MaMB).FirstOrDefault();
+                luu.Gia = m.Gia;
+                db.SubmitChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                string error = ex.ToString();
+                return false;
+                throw;
+            }
+        }
+
         // Tạo mã mặt bằng không trùng
         public string LayMaMBTuSinh()
         {
