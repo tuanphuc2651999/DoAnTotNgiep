@@ -116,7 +116,7 @@
             this.ribbonPage4,
             this.ribbonPage5});
             this.ribbon.QuickToolbarItemLinks.Add(this.skinDropDownButtonItem1);
-            this.ribbon.Size = new System.Drawing.Size(1390, 143);
+            this.ribbon.Size = new System.Drawing.Size(1390, 178);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnDangNhap
@@ -175,6 +175,7 @@
             this.btnThongTinSuDung.Name = "btnThongTinSuDung";
             this.btnThongTinSuDung.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnThongTinSuDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongTinSuDung_ItemClick);
             // 
             // btnBangGia
             // 
@@ -471,11 +472,11 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 768);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 762);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1390, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1390, 37);
             this.ribbonStatusBar.Visible = false;
             // 
             // xtraTabbedMdiManager1
@@ -494,7 +495,7 @@
             // FrmMain
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1390, 799);
             this.Controls.Add(this.dataGridView1);
