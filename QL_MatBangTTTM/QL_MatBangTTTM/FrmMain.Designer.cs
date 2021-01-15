@@ -116,7 +116,7 @@
             this.ribbonPage4,
             this.ribbonPage5});
             this.ribbon.QuickToolbarItemLinks.Add(this.skinDropDownButtonItem1);
-            this.ribbon.Size = new System.Drawing.Size(1390, 143);
+            this.ribbon.Size = new System.Drawing.Size(1390, 178);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // btnDangNhap
@@ -353,6 +353,7 @@
             this.btnTCDoanhThu.Name = "btnTCDoanhThu";
             this.btnTCDoanhThu.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnTCDoanhThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTCDoanhThu_ItemClick);
             // 
             // btnThongKeViPham
             // 
@@ -471,11 +472,11 @@
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 768);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 762);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(1390, 31);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(1390, 37);
             this.ribbonStatusBar.Visible = false;
             // 
             // xtraTabbedMdiManager1
@@ -487,6 +488,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1380, 753);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(10, 10);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.Visible = false;
@@ -494,7 +496,7 @@
             // FrmMain
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1390, 799);
             this.Controls.Add(this.dataGridView1);

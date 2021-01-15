@@ -172,7 +172,7 @@ namespace QL_MatBangTTTM
         }
 
         private void btnLuu_ItemClick(object sender, ItemClickEventArgs e)
-        {
+        {          
             string s = txtMaDK.EditValue.ToString();
             if (string.IsNullOrEmpty(s))
             {
@@ -210,13 +210,13 @@ namespace QL_MatBangTTTM
                     ctdvDien.MaDichVu = "AEON_MDV0001";
                     ctdvDien.ChiSoMoi = int.Parse(txtSoDienMoi.EditValue.ToString());
                     ctdvDien.ChiSoCu = int.Parse(txtSoDienCu.EditValue.ToString());
-                    ctdvDien.Gia = 1;
+                    ctdvDien.Gia = thueMB.LayGiaDien();
                     CT_DichVu ctdvNuoc = new CT_DichVu();
                     ctdvNuoc.MaPhieuDV = txtHoaDon.EditValue.ToString();
                     ctdvNuoc.MaDichVu = "AEON_MDV0002";
                     ctdvNuoc.ChiSoMoi = int.Parse(txtSoNuocMoi.EditValue.ToString());
                     ctdvNuoc.ChiSoCu = int.Parse(txtSoNuocCu.EditValue.ToString());
-                    ctdvNuoc.Gia = 1;
+                    ctdvNuoc.Gia = thueMB.LayGiaNuoc();
                     bool keys = true;
                     if (!thueMB.ThemHoaDonDichVu(pdv))
                     {
@@ -231,7 +231,8 @@ namespace QL_MatBangTTTM
                     if(keys)
                     {
                         MessageBox.Show("Thêm hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ThongBao tt = new ThongBao();
+
+                        DAL.ThongBao tt = new DAL.ThongBao();
                         tt.NgayTao = Commons.ConvertStringToDate(txtNgayLap.Text);
                         tt.TaiKhoan = pdv.ThueMatBang.DangKyThue.KhachHang.SDT;
                         tt.MaLoaiTT = 1;
@@ -239,6 +240,11 @@ namespace QL_MatBangTTTM
                         tt.NoiDung = string.Format(QL_MatBang.NOIDUNGTHONGBAO, (DateTime.Now).Month + "/" + (DateTime.Now).Year);
                         tt.TieuDe = QL_MatBang.TIEUDETHONGBAO;
                         thueMB.ThemThongBaoDichVu(tt);
+                        PhieuDichVu p = new PhieuDichVu();
+                        p = thueMB.LayThongTinPhieuDV(txtHoaDon.EditValue.ToString());
+                        List<CT_DichVu> c = new List<CT_DichVu>();
+                        c = thueMB.LayThongTinCT_DichVu2(txtHoaDon.EditValue.ToString());
+                        InHoaDon(p, c);
                     }
                     Click_BtnLuu();
                     LoadDSHoaDon();
@@ -425,5 +431,13 @@ namespace QL_MatBangTTTM
             }    
             Click_BtnSua();
         }
+
+        private void InHoaDon(PhieuDichVu dv, List<CT_DichVu> ct)
+        {
+            FrmInHD inHD = new FrmInHD();
+            inHD.print(dv, ct);
+            inHD.ShowDialog();
+        }
+        
     }
 }

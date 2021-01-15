@@ -202,6 +202,9 @@ namespace QL_MatBangTTTM
             Application.Exit();
         }
 
-       
+        private void btnTCDoanhThu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            loadFrm(new FrmThongKeDanhThu());
+        }
     }
 }

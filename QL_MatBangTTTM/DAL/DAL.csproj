@@ -48,6 +48,7 @@
     <Compile Include="DAL_KhachHang.cs" />
     <Compile Include="DAL_NhanVien.cs" />
     <Compile Include="DAL_PhanQuyen.cs" />
+    <Compile Include="DAL_ThongKe.cs" />
     <Compile Include="DAL_TraMatBang.cs" />
     <Compile Include="DAL_XuLyViPham.cs" />
     <Compile Include="DBQL_MatBangTTTM.designer.cs">
@@ -90,6 +91,14 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Flurl">
+      <Version>3.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Flurl.Http">
+      <Version>3.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

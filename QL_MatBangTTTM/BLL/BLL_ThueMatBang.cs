@@ -218,5 +218,9 @@ namespace BLL
         {
             return dkThue.LayThongTinThueMatBang(ma);
         }
+        public List<CT_DichVu> LayThongTinCT_DichVu2(string maPDV)
+        {
+            return dkThue.LayThongTinCT_DichVu2(maPDV);
+        }
     }
 }
