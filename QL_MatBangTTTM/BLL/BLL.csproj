@@ -46,6 +46,7 @@
     <Compile Include="BLL_MatBang.cs" />
     <Compile Include="BLL_NhanVien.cs" />
     <Compile Include="BLL_PhanQuyen.cs" />
+    <Compile Include="BLL_ThongKe.cs" />
     <Compile Include="BLL_ThueMatBang.cs" />
     <Compile Include="BLL_TraMatBang.cs" />
     <Compile Include="BLL_XuLyViPham.cs" />
@@ -60,6 +61,14 @@
       <Project>{0e5b3df0-d9d2-4294-949f-6d8342ddfbb5}</Project>
       <Name>Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Flurl">
+      <Version>3.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Flurl.Http">
+      <Version>3.0.1</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

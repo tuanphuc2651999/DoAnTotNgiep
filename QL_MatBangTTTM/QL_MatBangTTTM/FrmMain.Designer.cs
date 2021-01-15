@@ -354,6 +354,7 @@
             this.btnTCDoanhThu.Name = "btnTCDoanhThu";
             this.btnTCDoanhThu.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnTCDoanhThu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTCDoanhThu_ItemClick);
             // 
             // btnThongKeViPham
             // 
@@ -488,6 +489,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1380, 753);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(10, 10);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.Visible = false;

@@ -42,7 +42,7 @@ namespace DAL
         public double TinhTienCoc(string maMB) {
             var matBang = db.MatBangs.FirstOrDefault(t => t.MaMB.Equals(maMB));
             var giaThueMB = db.GiaThues.FirstOrDefault(t => t.MaGiaThue.Equals(matBang.Gia));
-            return ((double)matBang.DienTich * (double)giaThueMB.Gia)/12*3-500000;
+            return ((double)matBang.DienTich * (double)giaThueMB.Gia)*3-500000;
         }
         public MatBang LayThongTinMB(string mb)
         {
@@ -82,23 +82,32 @@ namespace DAL
         #region ThueMB
         public List<ThueMatBangModel> LayDSThueMatBang()
         {
-            var thueMB = from tmb in db.ThueMatBangs
-                         select new ThueMatBangModel
-                         {
-                             MaThueMB = tmb.MaThueMB,
-                             MaDKThue = tmb.MaDKThue,
-                             NgayLap = string.Format("{0:dd/MM/yyyy}", tmb.NgayLap),
-                             NgayThue = string.Format("{0:dd/MM/yyyy}", tmb.NgayThue) ,
-                             NgayHetHanHopDong = string.Format("{0:dd/MM/yyyy}", tmb.NgayHetHanHopDong),
-                             ThoiHanThue = tmb.ThoiHanThue,
-                             SoNamDaThanhToan = tmb.SoNamDaThanhToan,
-                             PhiDichVuMotNam = (int)tmb.PhiDichVuMotNam,
-                             TinhTrang = tmb.TinhTrang,
-                             MaNhanVien = tmb.MaNhanVien,
-                             TienCoc =  tmb.HoaDonTienCoc1.SoTien,
-                             TongTien = tmb.TongTien
-                         };                       
-            return thueMB.ToList();
+            try
+            {
+                var thueMB = from tmb in db.ThueMatBangs
+                             select new ThueMatBangModel
+                             {
+                                 MaThueMB = tmb.MaThueMB,
+                                 MaDKThue = tmb.MaDKThue,
+                                 NgayLap = string.Format("{0:dd/MM/yyyy}", tmb.NgayLap),
+                                 NgayThue = string.Format("{0:dd/MM/yyyy}", tmb.NgayThue),
+                                 NgayHetHanHopDong = string.Format("{0:dd/MM/yyyy}", tmb.NgayHetHanHopDong),
+                                 ThoiHanThue = tmb.ThoiHanThue,
+                                 SoNamDaThanhToan = tmb.SoNamDaThanhToan,
+                                 PhiDichVuMotNam = (int)tmb.PhiDichVuMotNam,
+                                 TinhTrang = tmb.TinhTrang,
+                                 MaNhanVien = tmb.MaNhanVien,
+                                 TienCoc = tmb.HoaDonTienCoc1.SoTien,
+                                 TongTien = tmb.TongTien
+                             };
+                return thueMB.ToList();
+            }
+            catch (Exception)
+            {
+                return null;
+                throw;
+            }
+            
         }
         public List<ThueMatBang> LayDSThueMatBang2()
         {
@@ -529,7 +538,12 @@ namespace DAL
             var pdv = db.CT_DichVus.Where(t => t.MaPhieuDV == maPDV&& t.MaDichVu==maDV).Select(t=>t).FirstOrDefault();
             return pdv;
         }
+        public List<CT_DichVu> LayThongTinCT_DichVu2(string maPDV)
+        {
 
+            var pdv = db.CT_DichVus.Where(t => t.MaPhieuDV == maPDV ).Select(t => t);
+            return pdv.ToList();
+        }
         public List<PhieuDichVuModel> LayDSPhieuDV()
         {
             var pdv = from dv in db.PhieuDichVus

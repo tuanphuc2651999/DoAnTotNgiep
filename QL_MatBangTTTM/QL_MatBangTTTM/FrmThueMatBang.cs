@@ -106,7 +106,7 @@ namespace QL_MatBangTTTM
             txtMaDK.Focus();
             Click_BtnThem();
             txtMaDK.EditValue = null;
-
+            tienCoc = 0;
         }
         public void LoadDSThue()
         {
@@ -169,6 +169,7 @@ namespace QL_MatBangTTTM
                 {
                     txtTienCoc.EditValue = String.Format("{0:0,0 vnđ}", hoaDon.SoTien);
                     maHD = hoaDon.MaHD;
+                    tienCoc = (int)hoaDon.SoTien;
                 }   
                 else
                 {
@@ -183,10 +184,7 @@ namespace QL_MatBangTTTM
                 //tienCoc = (int)hoaDon.SoTien;
                 
                 phiDV = (int)thueMB.PhiDichVu((int)mb.DienTich);
-                if (string.IsNullOrEmpty(dgvDSThueMatBang.GetFocusedRowCellDisplayText(colDaThanhToan).ToString()))
-                    txtNamDaThanhToan.EditValue = 0;
-                else
-                txtNamDaThanhToan.EditValue = dgvDSThueMatBang.GetFocusedRowCellDisplayText(colDaThanhToan).ToString();
+                
             }               
         }
         public void LoadLaiDS()
@@ -245,6 +243,7 @@ namespace QL_MatBangTTTM
             themMB.SoNamDaThanhToan = int.Parse(txtNamDaThanhToan.EditValue.ToString());
             themMB.HoaDonTienCoc = maHD;
             themMB.PhiDichVuMotNam = phiDV;
+            themMB.TongTien = 5000000 + tienCoc;
             themMB.TinhTrang = 1;
             themMB.MaNhanVien = maNV;
             themMB.MaDKThue = txtMaDK.EditValue.ToString();
@@ -294,6 +293,7 @@ namespace QL_MatBangTTTM
             txtNgayLap.EditValue=Commons.ConvertStringToDate(dgvDSThueMatBang.GetFocusedRowCellDisplayText(colNgayLap));
             txtTrangThai.Text= dgvDSThueMatBang.GetFocusedRowCellValue(colTrangThai).ToString();          
             txtNgayHetHan.Text= dgvDSThueMatBang.GetFocusedRowCellValue(colNgayTra).ToString();
+            txtNamDaThanhToan.Text = dgvDSThueMatBang.GetFocusedRowCellValue(colDaThanhToan).ToString();
         }
 
         private void btnHuy_ItemClick(object sender, ItemClickEventArgs e)
