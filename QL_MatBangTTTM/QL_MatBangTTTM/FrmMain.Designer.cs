@@ -175,6 +175,7 @@
             this.btnThongTinSuDung.Name = "btnThongTinSuDung";
             this.btnThongTinSuDung.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnThongTinSuDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThongTinSuDung_ItemClick);
             // 
             // btnBangGia
             // 

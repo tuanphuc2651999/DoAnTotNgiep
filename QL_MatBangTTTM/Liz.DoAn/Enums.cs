@@ -19,4 +19,10 @@ namespace Liz.DoAn
         Locked = -1,
         Active = 1
     }
+    public enum StatusMatBang
+    {
+        Locked = -1,
+        Empty = 0,
+        Rented = 1,
+    }
 }

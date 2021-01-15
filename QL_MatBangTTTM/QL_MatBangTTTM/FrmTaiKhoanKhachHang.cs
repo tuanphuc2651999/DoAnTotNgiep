@@ -267,7 +267,7 @@ namespace QL_MatBangTTTM
                     }
                     else
                     {
-                        MessageBox.Show("Lỗi tạo tài khoản cho khách hàng " + cboMaKhachHang.EditValue.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Lỗi khóa tài khoản cho khách hàng " + cboMaKhachHang.EditValue.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         FrmTaiKhoanKhachHang_Load(null, null);
                         //SplashScreenManager.CloseDefaultSplashScreen();
                     }

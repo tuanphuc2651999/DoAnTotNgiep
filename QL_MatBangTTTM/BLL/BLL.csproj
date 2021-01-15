@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BLL_HoaDonTienThue.cs" />
     <Compile Include="BLL_KhachHang.cs" />
+    <Compile Include="BLL_MatBang.cs" />
     <Compile Include="BLL_NhanVien.cs" />
     <Compile Include="BLL_PhanQuyen.cs" />
     <Compile Include="BLL_ThongKe.cs" />

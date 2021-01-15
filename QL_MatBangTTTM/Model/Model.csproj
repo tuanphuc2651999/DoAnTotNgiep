@@ -54,6 +54,7 @@
     <Compile Include="ThongKeModel.cs" />
     <Compile Include="ThueMatBangModel.cs" />
     <Compile Include="TraMatBangModel.cs" />
+    <Compile Include="TTMatBangModel.cs" />
     <Compile Include="XuLyViPhamModel.cs" />
   </ItemGroup>
   <ItemGroup>

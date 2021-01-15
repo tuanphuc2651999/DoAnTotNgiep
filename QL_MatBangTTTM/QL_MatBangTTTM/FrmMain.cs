@@ -180,12 +180,12 @@ namespace QL_MatBangTTTM
 
         private void btnMatBang_ItemClick(object sender, ItemClickEventArgs e)
         {
-            loadFrm(new FrmMatBang());
+            loadFrm(new FrmMatBang(maNVDN));
         }
 
         private void btnDoiMatKhau_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //LoadFormDialog(new FrmDoiMatKhau());
+            LoadFormDialog(new FrmDoiMatKhau(maNVDN));
         }
 
         private void FrmMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -202,6 +202,12 @@ namespace QL_MatBangTTTM
             Application.Exit();
         }
 
+        private void btnThongTinSuDung_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+    }
+}
         private void btnTCDoanhThu_ItemClick(object sender, ItemClickEventArgs e)
         {
             loadFrm(new FrmThongKeDanhThu());
