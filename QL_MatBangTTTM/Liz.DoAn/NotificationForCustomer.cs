@@ -25,21 +25,9 @@ namespace Liz.DoAn
         }
 
         string url = "https://fcm.googleapis.com/fcm/send";
-        public string ThongBaoChoKhachHang()
-        {
-            Root r = new Root
-            {
-                to = "fFJR9fIHxno:APA91bEAIMu58g79c337nsL41w-tkNFoiFNEYlJeegZ3UTPWGEt_zs1AhIK2j-hkivLhNP4lVyTgq-mCrj0IP6Z1qwOH7ZI6c3o5-_Drr3RGxbRn3TTAPXJ5imCYDHOdQPHIEunnhx7X",
-                notification = new Notification
-                {
-                    title = "test",
-                    body = "đây là body",
-                    mutable_content = "True",
-                    sound = "Tri-tone"
-                }
-
-            };
-            string json = JsonConvert.SerializeObject(r);
+        public string ThongBaoChoKhachHang(Root input)
+        {          
+            string json = JsonConvert.SerializeObject(input);
 
             IRestClient url = new RestClient("https://fcm.googleapis.com/");
 

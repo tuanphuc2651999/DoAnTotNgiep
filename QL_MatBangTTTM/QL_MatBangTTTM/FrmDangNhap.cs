@@ -29,6 +29,7 @@ namespace QL_MatBangTTTM
         {
             var dsTaiKhoan = tknv.layDSTKNV();
             var ttTaiKhoan = dsTaiKhoan.Where(t => t.TaiKhoan.Equals(txtTenDangNhap.Text)).FirstOrDefault();
+           
             if (string.IsNullOrEmpty(txtTenDangNhap.Text.Trim()))
             {
                 MessageBox.Show("Không được bỏ trống tên đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -41,7 +42,15 @@ namespace QL_MatBangTTTM
                 this.txtMatKhau.Focus();
                 return;
             }
-            
+            if(ttTaiKhoan==null)
+            {
+
+                MessageBox.Show("Tài khoản không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.txtTenDangNhap.Text = "";
+                this.txtMatKhau.Text = "";
+                this.txtTenDangNhap.Focus();
+                return;
+            }    
             if (!ttTaiKhoan.MatKhau.Equals(txtMatKhau.Text))
             {
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu");

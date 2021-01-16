@@ -222,5 +222,13 @@ namespace BLL
         {
             return dkThue.LayThongTinCT_DichVu2(maPDV);
         }
+        public bool KiemTraToken(string id)
+        {
+            return dkThue.KiemTraToken(id);
+        }
+        public string LayToken(string id)
+        {
+            return dkThue.LayToken(id);
+        }
     }
 }

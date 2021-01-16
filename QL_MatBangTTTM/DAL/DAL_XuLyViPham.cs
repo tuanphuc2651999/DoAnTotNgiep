@@ -65,13 +65,13 @@ namespace DAL
             return hs;
         }
 
-        public bool KiemTraViPhamPhiDichVu()
+        public bool KiemTraViPhamPhiDichVu(string ma)
         {
             DateTime dateTime = DateTime.Now;
             string nam = dateTime.ToString("yyyy");
             string thang = dateTime.ToString("MM");
             int kt = db.HoSoViPhams.Where(t => t.NgayLap.Value.Year.Equals(nam)
-             && t.NgayLap.Value.Month.Equals(thang)
+             && t.NgayLap.Value.Month.Equals(thang) && t.MaThueMB==ma
              && t.MaViPham.Equals("AEON_MVP0002")).Count();
             if (kt > 0)
                 return true;
@@ -125,7 +125,8 @@ namespace DAL
             string thang = dateTime.ToString("MM");
             PhieuDichVu kt = db.PhieuDichVus.Where(
                  t=>t.MaThueMB.Equals(ma)).OrderByDescending(t=>t.NgayLap).FirstOrDefault();
-            if(kt.TinhTrang!=1)
+    
+            if(kt != null&&kt.TinhTrang!=1)
             {
                 return true;
             }

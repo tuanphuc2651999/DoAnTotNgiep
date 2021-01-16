@@ -31,8 +31,8 @@ namespace Model
         public string KhachHang { get; set; }
         public string MaNhanVien { get; set; }
         public string MaDKThue { get; set; }
-        public int? TongTien { get; set; }
+        public decimal? TongTien { get; set; }
         public string HoaDonTienCoc { get; set; }
-        public int? TienCoc { get; set; }
+        public decimal? TienCoc { get; set; }
     }
 }

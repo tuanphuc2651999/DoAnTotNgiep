@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BLL;
 using Liz.DoAn;
+using Model;
 
 namespace QL_MatBangTTTM
 {
@@ -19,9 +20,42 @@ namespace QL_MatBangTTTM
         public FrmThongKeDanhThu()
         {
             InitializeComponent();
-            PushThongBao res = new PushThongBao();
-            APIInput input = new APIInput();
-            input.to= "dbv6GQTeiFM:APA91bGGRpUruFoBgrilCCFvW_j7G_RTcExUii30CJ0hTKAndaa0o4c_nXrkNddf5yghTphUM7dD2hoZdsMHcVJKLUNA6ZTPdJUsfeFLtqYQt8rgq5G9RhwbakedtEquIMrO5EvN54pv";
+            dynamic result = tk.HDTienCoc();
+            decimal tong=0;
+            foreach (var item in result)
+            {
+                tong = (decimal)(tong + item.Tong);
+            }
+            txtTienCoc.Text = String.Format("{0:0,0 vnđ}", tong);
+
+
+            dynamic dv = tk.HDDichVu();
+            decimal tongdv = 0;
+            foreach (var item in dv)
+            {
+                tongdv = (decimal)(tongdv + item.Tong);
+            }
+            txtTienDV.Text = String.Format("{0:0,0 vnđ}", tongdv);
+
+            dynamic tt = tk.HDTienThue();
+            decimal tongtt = 0;
+            foreach (var item in tt)
+            {
+                tongtt = (decimal)(tongtt + item.Tong);
+            }
+            txtTienThue.Text = String.Format("{0:0,0 vnđ}", tongtt);
+
+            dynamic tgc = tk.HDTienGiuCho();
+            decimal tongtgc = 0;
+            foreach (var item in tgc)
+            {
+                tongtgc = (decimal)(tongtgc + item.Tong);
+            }
+
+            txtTongTien.Text= String.Format("{0:0,0 vnđ}", tongtt+ tongdv+ tong+ tongtgc);
+
+
+            /*input.to= "dbv6GQTeiFM:APA91bGGRpUruFoBgrilCCFvW_j7G_RTcExUii30CJ0hTKAndaa0o4c_nXrkNddf5yghTphUM7dD2hoZdsMHcVJKLUNA6ZTPdJUsfeFLtqYQt8rgq5G9RhwbakedtEquIMrO5EvN54pv";
             Notification notification = new Notification();
 
             notification.title="Đây là tile";
@@ -32,9 +66,8 @@ namespace QL_MatBangTTTM
             
             GuiThongBao guiThongBao = new GuiThongBao();
             //guiThongBao.Load(input);
-                      var result = guiThongBao.ThongBaoAsync(input);
+                      var result = guiThongBao.ThongBaoAsync(input);*/
 
-            var db = tk.DoanhThu();
             LoadChar();
         }
 

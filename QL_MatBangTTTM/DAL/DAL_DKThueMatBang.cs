@@ -697,5 +697,20 @@ namespace DAL
             }
         }
         #endregion
+
+        public bool KiemTraToken(string id)
+        {
+            TaiKhoanKH tk = db.TaiKhoanKHs.Where(t=>t.MaKhachHang==id).FirstOrDefault();
+            if(string.IsNullOrEmpty(tk.Token))
+            {
+                return false;
+            }
+            return true;
+        }
+        public string LayToken(string id)
+        {
+            TaiKhoanKH tk = db.TaiKhoanKHs.Where(t => t.MaKhachHang == id).FirstOrDefault();
+            return tk.Token;
+        }
     }
 }

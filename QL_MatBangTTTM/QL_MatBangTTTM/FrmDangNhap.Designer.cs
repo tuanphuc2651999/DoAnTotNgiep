@@ -35,7 +35,6 @@
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.lblMatKhau = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnCauHinh = new System.Windows.Forms.Button();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -54,7 +53,7 @@
             this.tableLayoutPanel2.Controls.Add(this.lblTitle, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.37607F));
@@ -76,7 +75,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lblMatKhau, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 47);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
@@ -101,7 +100,7 @@
             // 
             this.txtTenDangNhap.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtTenDangNhap.Location = new System.Drawing.Point(174, 21);
-            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(7);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.Size = new System.Drawing.Size(153, 23);
             this.txtTenDangNhap.TabIndex = 0;
@@ -111,7 +110,7 @@
             // 
             this.txtMatKhau.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtMatKhau.Location = new System.Drawing.Point(174, 65);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(7, 7, 7, 7);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(7);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(153, 23);
@@ -137,34 +136,22 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.42876F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.42876F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.910094F));
-            this.tableLayoutPanel3.Controls.Add(this.btnCauHinh, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnDangNhap, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.btnThoat, 3, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(6, 171);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(6);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(373, 48);
             this.tableLayoutPanel3.TabIndex = 5;
             // 
-            // btnCauHinh
-            // 
-            this.btnCauHinh.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnCauHinh.Location = new System.Drawing.Point(57, 6);
-            this.btnCauHinh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.btnCauHinh.Name = "btnCauHinh";
-            this.btnCauHinh.Size = new System.Drawing.Size(82, 36);
-            this.btnCauHinh.TabIndex = 0;
-            this.btnCauHinh.Text = "Cấu hình";
-            this.btnCauHinh.UseVisualStyleBackColor = true;
-            // 
             // btnDangNhap
             // 
             this.btnDangNhap.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnDangNhap.Location = new System.Drawing.Point(151, 6);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(6);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(82, 36);
             this.btnDangNhap.TabIndex = 1;
@@ -176,7 +163,7 @@
             // 
             this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnThoat.Location = new System.Drawing.Point(245, 6);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(6);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(82, 36);
             this.btnThoat.TabIndex = 2;
@@ -226,7 +213,6 @@
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Label lblMatKhau;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.Button btnCauHinh;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Label lblTitle;

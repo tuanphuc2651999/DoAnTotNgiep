@@ -15,7 +15,7 @@ namespace QL_MatBangTTTM
         {
             InitializeComponent();
         }
-        public void report(DateTime ngaylap, string mathue, string kh, string dt, string email, string mahd,List<CT_DichVu> data)
+        public void report(DateTime ngaylap, string mathue, string kh, string dt, string email, string mahd,string tenkh,List<CT_DichVu> data)
         {
             pNgayLap.Value = ngaylap;
             MaThue.Value = mathue;
@@ -23,6 +23,7 @@ namespace QL_MatBangTTTM
             pSDT.Value = dt;
             Email.Value = email;
             pMaHD.Value = mahd;
+            pTenKH.Value = tenkh;
             objectDataSource4.DataSource = data;
         }
     }

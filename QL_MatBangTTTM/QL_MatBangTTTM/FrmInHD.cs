@@ -28,7 +28,7 @@ namespace QL_MatBangTTTM
             }
             report.report((DateTime)dv.NgayLap,dv.MaThueMB,dv.ThueMatBang.DangKyThue.MaKhachHang,
                 dv.ThueMatBang.DangKyThue.KhachHang.SDT, dv.ThueMatBang.DangKyThue.KhachHang.Email,
-                dv.MaPhieuDV,data);
+                dv.MaPhieuDV,dv.ThueMatBang.DangKyThue.KhachHang.HoTenKH,data);
             {
                 documentViewer1.DocumentSource = report;
                 report.CreateDocument();

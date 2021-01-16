@@ -31,7 +31,7 @@ namespace BLL
         {
             return tmb.LayAllDSDangThueMatBang();
         }
-        public int TinhTienHoanLai(string ma)
+        public decimal TinhTienHoanLai(string ma)
         {
             return tmb.TinhTienHoanLai(ma);
         }

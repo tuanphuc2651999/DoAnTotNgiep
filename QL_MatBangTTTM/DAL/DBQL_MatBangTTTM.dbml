@@ -1,10 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_MatBangTTTM" Class="DBQL_MatBangTTTMDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-IQ05A3C\SQLEXPRESS;Initial Catalog=QL_MatBangTTTM;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QL_MatBangTTTMConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-JT2VOVA;Initial Catalog=QL_MatBangTTTM;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="QL_MatBangTTTMConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChucVu" Member="ChucVus">
     <Type Name="ChucVu">
       <Column Name="MaChucVu" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenChucVu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="ChucVu_NhanVien" Member="NhanViens" ThisKey="MaChucVu" OtherKey="ChucVu" Type="NhanVien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ViPham" Member="ViPhams">
+    <Type Name="ViPham">
+      <Column Name="MaViPham" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenViPham" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="ViPham_HoSoViPham" Member="HoSoViPhams" ThisKey="MaViPham" OtherKey="MaViPham" Type="HoSoViPham" />
     </Type>
   </Table>
   <Table Name="dbo.CT_DichVu" Member="CT_DichVus">
@@ -81,7 +88,7 @@
       <Column Name="MaHD" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="NgayLap" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="NgayDong" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="SoTien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SoTien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="TrangThai" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaDK" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="HoaDonTienCoc_ThueMatBang" Member="ThueMatBangs" ThisKey="MaHD" OtherKey="HoaDonTienCoc" Type="ThueMatBang" />
@@ -94,7 +101,7 @@
       <Column Name="NgayThanhToan" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="TienThue" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TienDichVu" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TongTien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="TinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Ky" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaThueMB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
@@ -114,9 +121,9 @@
       <Column Name="MaViPham" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MaThueMB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MaNhanVien" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ViPham_HoSoViPham" Member="ViPham" ThisKey="MaViPham" OtherKey="MaViPham" Type="ViPham" IsForeignKey="true" />
       <Association Name="NhanVien_HoSoViPham" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
       <Association Name="ThueMatBang_HoSoViPham" Member="ThueMatBang" ThisKey="MaThueMB" OtherKey="MaThueMB" Type="ThueMatBang" IsForeignKey="true" />
-      <Association Name="ViPham_HoSoViPham" Member="ViPham" ThisKey="MaViPham" OtherKey="MaViPham" Type="ViPham" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.KhachHang" Member="KhachHangs">
@@ -266,6 +273,7 @@
       <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="TinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaKhachHang" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Token" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Association Name="TaiKhoanKH_ThongBao" Member="ThongBaos" ThisKey="TaiKhoan" OtherKey="TaiKhoan" Type="ThongBao" />
       <Association Name="KhachHang_TaiKhoanKH" Member="KhachHang" ThisKey="MaKhachHang" OtherKey="MaKH" Type="KhachHang" IsForeignKey="true" />
     </Type>
@@ -312,7 +320,7 @@
       <Column Name="TinhTrang" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaNhanVien" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MaDKThue" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="TongTien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TongTien" Type="System.Decimal" DbType="Money" CanBeNull="true" />
       <Column Name="HoaDonTienCoc" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="ThueMatBang_HoaDonTienThue" Member="HoaDonTienThues" ThisKey="MaThueMB" OtherKey="MaThueMB" Type="HoaDonTienThue" />
       <Association Name="ThueMatBang_HoSoViPham" Member="HoSoViPhams" ThisKey="MaThueMB" OtherKey="MaThueMB" Type="HoSoViPham" />
@@ -334,13 +342,6 @@
       <Column Name="ThueMB" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="NhanVien_TraMatBang" Member="NhanVien" ThisKey="MaNhanVien" OtherKey="MaNhanVien" Type="NhanVien" IsForeignKey="true" />
       <Association Name="ThueMatBang_TraMatBang" Member="ThueMatBang" ThisKey="ThueMB" OtherKey="MaThueMB" Type="ThueMatBang" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.ViPham" Member="ViPhams">
-    <Type Name="ViPham">
-      <Column Name="MaViPham" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenViPham" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="ViPham_HoSoViPham" Member="HoSoViPhams" ThisKey="MaViPham" OtherKey="MaViPham" Type="HoSoViPham" />
     </Type>
   </Table>
 </Database>

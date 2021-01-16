@@ -12,6 +12,7 @@ using Liz.DoAn;
 using BLL;
 using DAL;
 using QL_MatBangTTTM.Resource;
+using static Liz.DoAn.NotificationForCustomer;
 
 namespace QL_MatBangTTTM
 {
@@ -173,8 +174,7 @@ namespace QL_MatBangTTTM
 
         private void btnLuu_ItemClick(object sender, ItemClickEventArgs e)
         {          
-            string s = txtMaDK.EditValue.ToString();
-            if (string.IsNullOrEmpty(s))
+            if (txtMaDK.EditValue==null)
             {
                 MessageBox.Show("Hãy chọn mã thuê", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtMaDK.Focus();
@@ -186,6 +186,15 @@ namespace QL_MatBangTTTM
                 cboTrangThai.Focus();
                 return;
             }    
+            if(txtSoDienCu.Text==txtSoDienMoi.Text&& txtSoNuocMoi.Text == txtSoNuocCu.Text)
+            {
+                
+                    MessageBox.Show("Hãy chọn số điện nước", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtSoDienMoi.Focus();
+                    return;
+               
+            }    
+
             if(check)
             {
                 try
@@ -230,7 +239,7 @@ namespace QL_MatBangTTTM
                     }
                     if(keys)
                     {
-                        MessageBox.Show("Thêm hóa đơn thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       DialogResult r=  MessageBox.Show("Thêm hóa đơn thành công, bạn có muốn in hóa đơn không", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 
                         DAL.ThongBao tt = new DAL.ThongBao();
                         tt.NgayTao = Commons.ConvertStringToDate(txtNgayLap.Text);
@@ -240,11 +249,29 @@ namespace QL_MatBangTTTM
                         tt.NoiDung = string.Format(QL_MatBang.NOIDUNGTHONGBAO, (DateTime.Now).Month + "/" + (DateTime.Now).Year);
                         tt.TieuDe = QL_MatBang.TIEUDETHONGBAO;
                         thueMB.ThemThongBaoDichVu(tt);
-                        PhieuDichVu p = new PhieuDichVu();
-                        p = thueMB.LayThongTinPhieuDV(txtHoaDon.EditValue.ToString());
-                        List<CT_DichVu> c = new List<CT_DichVu>();
-                        c = thueMB.LayThongTinCT_DichVu2(txtHoaDon.EditValue.ToString());
-                        InHoaDon(p, c);
+                        if(thueMB.KiemTraToken(dgvDSHoaDon.GetFocusedRowCellDisplayText(colKhachHang)))
+                        {
+                            Root root = new Root();
+                            Notification notification = new Notification();
+                            NotificationForCustomer thongbao = new NotificationForCustomer();
+                            root.to =thueMB.LayToken(dgvDSHoaDon.GetFocusedRowCellDisplayText(colKhachHang));
+                            notification.title = tt.TieuDe;
+                            notification.body = tt.NoiDung;
+                            notification.mutable_content = "True";
+                            notification.sound = "Tri-tone";
+                            root.notification = notification;
+                            thongbao.ThongBaoChoKhachHang(root);
+                        }    
+
+                       
+                        if(r==DialogResult.Yes)
+                        {
+                            PhieuDichVu p = new PhieuDichVu();
+                            p = thueMB.LayThongTinPhieuDV(txtHoaDon.EditValue.ToString());
+                            List<CT_DichVu> c = new List<CT_DichVu>();
+                            c = thueMB.LayThongTinCT_DichVu2(txtHoaDon.EditValue.ToString());
+                            InHoaDon(p, c);
+                        }                  
                     }
                     Click_BtnLuu();
                     LoadDSHoaDon();

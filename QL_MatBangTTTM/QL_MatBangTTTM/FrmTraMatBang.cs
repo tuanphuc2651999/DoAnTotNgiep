@@ -188,7 +188,7 @@ namespace QL_MatBangTTTM
             traMatBang.MaTraMatBang = txtMaPhieuTra.Text;
             traMatBang.NgayLap = Commons.ConvertStringToDate(txtNgayLap.Text);
             traMatBang.NgayTra = Commons.ConvertStringToDate(txtNgayTra.Text);
-            traMatBang.TienHoanLai = traMB.TinhTienHoanLai(txtMaThueMB.EditValue.ToString()) ;
+            traMatBang.TienHoanLai = (int?)traMB.TinhTienHoanLai(txtMaThueMB.EditValue.ToString()) ;
             traMatBang.ThueMB = txtMaThueMB.EditValue.ToString();
             TimeSpan kt = Commons.ConvertStringToDate(txtNgayHetHan.Text)- Commons.ConvertStringToDate(txtNgayTra.Text);
             int ngay = kt.Days;

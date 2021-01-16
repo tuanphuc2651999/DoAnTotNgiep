@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 using BLL;
+using DAL;
 
 namespace QL_MatBangTTTM
 {
@@ -76,8 +77,8 @@ namespace QL_MatBangTTTM
         {
             XoaDuLieuTextBox();
             btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            btnXoa.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+           // btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+           // btnXoa.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnLuu.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnLuuVP.Visible = true;
@@ -90,24 +91,26 @@ namespace QL_MatBangTTTM
             txtNhanVien.Text = maNV;
             txtNgayLap.Text = DateTime.Now.ToString("dd/MM/yyyy");
             txtMaThue.Focus();
+            cboTinhTrang.ReadOnly = false;
         }
         private void Click_BtnSua()
         {
             btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            btnXoa.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+           // btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+           // btnXoa.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnLuu.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnLuuVP.Visible = true;
             btnNhapLai.Visible = true;
             btnHuyVP.Visible = true;
             check = true;
+            cboTinhTrang.ReadOnly = true;
         }
         private void Click_BtnLuu()
         {
             btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-            btnXoa.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-            btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+           // btnXoa.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+           // btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnLuu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnLuuVP.Visible = false;
@@ -121,8 +124,8 @@ namespace QL_MatBangTTTM
         private void Click_BtnHuy()
         {
             btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-            btnXoa.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
-            btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+           // btnXoa.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+           // btnSua.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
             btnLuu.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnHuy.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             btnLuuVP.Visible = false;
@@ -131,6 +134,7 @@ namespace QL_MatBangTTTM
             choNhapTextBox(true);
             //choNhapTextBox(true);   
             check = false;
+            cboTinhTrang.ReadOnly = true;
         }
         #endregion
         private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
@@ -165,6 +169,37 @@ namespace QL_MatBangTTTM
                 errorProvider1.SetError(txtViPham, "Hãy chọn lại vi phạm");
                 txtViPham.Focus();
                 return;
+            }
+            HoSoViPham hs = new HoSoViPham();
+            hs.MaHSViPham = txtMaHS.Text;
+            hs.NgayLap = DateTime.Now;
+            if(cboTinhTrang.Text=="Chưa đóng")
+            hs.TinhTrang = 0;
+            else
+            {
+                hs.TinhTrang = 1;
+            }
+            if (txtTienPhat.Text.Length > 0)
+            {
+                string tien = txtTienPhat.Text.ToString().Remove(txtTienPhat.Text.Length - 4);
+                int tongtien= int.Parse(tien.Replace(",",""));
+                hs.TongTienPhat = tongtien;
+            }
+            else
+                hs.TongTienPhat = 0;
+            hs.GhiChu = txtGhiChu.Text;
+            hs.MaViPham = txtViPham.EditValue.ToString();
+            hs.MaThueMB = txtMaThue.Text;
+            hs.MaNhanVien = maNV;
+            if (vp.ThemHSViPham(hs))
+            {
+                MessageBox.Show("Thêm vi phạm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Click_BtnLuu();
+                dgvDSViPham.Focus();
+                dgvDSViPham_FocusedRowChanged(null,null);
+                cboTinhTrang.ReadOnly = true;
+                LoadDSHoSoViPham();
+                LoadAllMaThue();
             }
         }
 
@@ -240,7 +275,7 @@ namespace QL_MatBangTTTM
                 }    
 
 
-                if(vp.KiemTraViPhamPhiDichVu())
+                if(vp.KiemTraViPhamPhiDichVu(txtMaThue.EditValue.ToString()))
                 {
                     MessageBox.Show("Vi phạm :"+txtViPham.Text+" trong tháng "+DateTime.Now.Month+"/"+ DateTime.Now.Year+ 
                         " của mã thuê "+txtMaThue.EditValue+" đã tổn tại",
@@ -304,6 +339,18 @@ namespace QL_MatBangTTTM
                     }
                 }
             }
+        }
+
+        private void cboTinhTrang_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if(cboTinhTrang.SelectedIndex==0)
+            {
+                txtNgayDong.EditValue = DateTime.Now;
+            } 
+            else
+            {
+                txtNgayDong.EditValue = null;
+            }    
         }
     }
 }

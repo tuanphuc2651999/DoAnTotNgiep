@@ -206,8 +206,8 @@ namespace QL_MatBangTTTM
         {
 
         }
-    }
-}
+    
+
         private void btnTCDoanhThu_ItemClick(object sender, ItemClickEventArgs e)
         {
             loadFrm(new FrmThongKeDanhThu());

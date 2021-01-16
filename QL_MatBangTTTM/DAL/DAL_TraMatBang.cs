@@ -75,13 +75,13 @@ namespace DAL
             var ds = db.ThueMatBangs.Select(t=>t);
             return ds.ToList();
         }
-        public int TinhTienHoanLai(string maThue)
+        public decimal TinhTienHoanLai(string maThue)
         {
             var tienDV = db.PhieuDichVus.Where(t => t.MaThueMB == maThue && t.TinhTrang!=1)
                 .Select(t => t.TongTien);
             var tienVP = db.HoSoViPhams.Where(t => t.MaThueMB == maThue && t.TinhTrang != 1&& t.TongTienPhat>0)
                 .Select(t => t.TongTienPhat);
-            int tiencoc = (int)db.ThueMatBangs.Where(t => t.MaThueMB == maThue).Select(t => t.HoaDonTienCoc1.SoTien).FirstOrDefault();
+            decimal tiencoc = (int)db.ThueMatBangs.Where(t => t.MaThueMB == maThue).Select(t => t.HoaDonTienCoc1.SoTien).FirstOrDefault();
             int tongtien=0;
             foreach (var item in tienDV)
             {

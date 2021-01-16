@@ -18,5 +18,19 @@ namespace BLL
         {
             return tk.DoanhThu();
         }
+
+        public dynamic HDTienCoc()
+        {
+            return tk.HDTienCoc();
+        }
+
+        public dynamic HDTienGiuCho()
+        {
+            return tk.HDTienCoc();
+        }
+        public dynamic HDDichVu()
+        {
+            return tk.HDTienCoc();
+        }
     }
 }

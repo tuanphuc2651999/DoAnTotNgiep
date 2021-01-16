@@ -35,9 +35,9 @@ namespace BLL
         {
             return vp.LayThongTinHoSoVP(ma);
         }
-        public bool KiemTraViPhamPhiDichVu()
+        public bool KiemTraViPhamPhiDichVu(string ma)
         {
-            return vp.KiemTraViPhamPhiDichVu();
+            return vp.KiemTraViPhamPhiDichVu(ma);
         }
         public bool KiemTraViPham(string ma)
         {
