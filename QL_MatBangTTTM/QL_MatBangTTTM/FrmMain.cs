@@ -96,7 +96,7 @@ namespace QL_MatBangTTTM
 
         private void btnGiaThueMatBang_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //loadFrm(new FrmTrangChu());
+            loadFrm(new FrmGiaThue(maNVDN));
         }
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
@@ -211,6 +211,16 @@ namespace QL_MatBangTTTM
         private void btnTCDoanhThu_ItemClick(object sender, ItemClickEventArgs e)
         {
             loadFrm(new FrmThongKeDanhThu());
+        }
+
+        private void btnDichVu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            loadFrm(new FrmDichVu(maNVDN));
+        }
+
+        private void btnViPham_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
         }
     }
 }

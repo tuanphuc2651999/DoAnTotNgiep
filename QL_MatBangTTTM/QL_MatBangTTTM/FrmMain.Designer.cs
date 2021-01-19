@@ -40,8 +40,8 @@
             this.btnTaiKhoanNhanVien = new DevExpress.XtraBars.BarButtonItem();
             this.btnTaiKhoanKhachHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnMatBang = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnViPham = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDichVu = new DevExpress.XtraBars.BarButtonItem();
             this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.btnKhachHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnNhanVien = new DevExpress.XtraBars.BarButtonItem();
@@ -69,6 +69,7 @@
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -89,8 +90,8 @@
             this.btnTaiKhoanNhanVien,
             this.btnTaiKhoanKhachHang,
             this.btnMatBang,
-            this.barButtonItem9,
-            this.barButtonItem10,
+            this.btnViPham,
+            this.btnDichVu,
             this.skinDropDownButtonItem1,
             this.btnKhachHang,
             this.btnNhanVien,
@@ -104,10 +105,11 @@
             this.btnTCDoanhThu,
             this.btnThongKeViPham,
             this.btnThongKeHopDong,
-            this.btnLichHen});
+            this.btnLichHen,
+            this.barButtonItem1});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbon.MaxItemId = 28;
+            this.ribbon.MaxItemId = 29;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -222,25 +224,27 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnMatBang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMatBang_ItemClick);
             // 
-            // barButtonItem9
+            // btnViPham
             // 
-            this.barButtonItem9.Caption = "Vi phạm";
-            this.barButtonItem9.Id = 12;
-            this.barButtonItem9.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem9.ImageOptions.SvgImage")));
-            this.barButtonItem9.LargeWidth = 80;
-            this.barButtonItem9.Name = "barButtonItem9";
-            this.barButtonItem9.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnViPham.Caption = "Vi phạm";
+            this.btnViPham.Id = 12;
+            this.btnViPham.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem9.ImageOptions.SvgImage")));
+            this.btnViPham.LargeWidth = 80;
+            this.btnViPham.Name = "btnViPham";
+            this.btnViPham.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnViPham.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnViPham_ItemClick);
             // 
-            // barButtonItem10
+            // btnDichVu
             // 
-            this.barButtonItem10.Caption = "Dịch vụ";
-            this.barButtonItem10.Id = 13;
-            this.barButtonItem10.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem10.ImageOptions.SvgImage")));
-            this.barButtonItem10.LargeWidth = 80;
-            this.barButtonItem10.Name = "barButtonItem10";
-            this.barButtonItem10.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            this.btnDichVu.Caption = "Dịch vụ";
+            this.btnDichVu.Id = 13;
+            this.btnDichVu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem10.ImageOptions.SvgImage")));
+            this.btnDichVu.LargeWidth = 80;
+            this.btnDichVu.Name = "btnDichVu";
+            this.btnDichVu.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnDichVu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDichVu_ItemClick);
             // 
             // skinDropDownButtonItem1
             // 
@@ -417,8 +421,8 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.btnTaiKhoanNhanVien);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnTaiKhoanKhachHang);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnMatBang);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem9);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem10);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnViPham);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnDichVu);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Thiết lập ban đầu";
             // 
@@ -494,6 +498,12 @@
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.Visible = false;
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "barButtonItem1";
+            this.barButtonItem1.Id = 28;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // FrmMain
             // 
             this.Appearance.Options.UseFont = true;
@@ -546,8 +556,8 @@
         private DevExpress.XtraBars.BarButtonItem btnTaiKhoanNhanVien;
         private DevExpress.XtraBars.BarButtonItem btnTaiKhoanKhachHang;
         private DevExpress.XtraBars.BarButtonItem btnMatBang;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem9;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem btnViPham;
+        private DevExpress.XtraBars.BarButtonItem btnDichVu;
         private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem1;
         private DevExpress.XtraBars.BarButtonItem btnKhachHang;
         private DevExpress.XtraBars.BarButtonItem btnNhanVien;
@@ -563,5 +573,6 @@
         private DevExpress.XtraBars.BarButtonItem btnThongKeHopDong;
         private DevExpress.XtraBars.BarButtonItem btnLichHen;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }

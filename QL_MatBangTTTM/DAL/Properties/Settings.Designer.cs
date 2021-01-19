@@ -28,9 +28,9 @@ namespace DAL.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-JT2VOVA;Initial Catalog=QL_MatBangTTTM;Integrated Security=Tr" +
             "ue")]
-        public string QL_MatBangTTTMConnectionString {
+        public string QL_MatBangTTTMConnectionString2 {
             get {
-                return ((string)(this["QL_MatBangTTTMConnectionString"]));
+                return ((string)(this["QL_MatBangTTTMConnectionString2"]));
             }
         }
         

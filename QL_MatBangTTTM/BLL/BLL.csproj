@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL_GiaVaDichVu.cs" />
     <Compile Include="BLL_HoaDonTienThue.cs" />
     <Compile Include="BLL_KhachHang.cs" />
     <Compile Include="BLL_MatBang.cs" />

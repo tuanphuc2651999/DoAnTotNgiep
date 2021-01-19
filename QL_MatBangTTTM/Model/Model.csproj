@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="CT_DichVuModel.cs" />
     <Compile Include="DangKyThueModel.cs" />
+    <Compile Include="DichVuModel.cs" />
+    <Compile Include="GiaDichVuModel.cs" />
+    <Compile Include="GiaThueModel.cs" />
     <Compile Include="HoaDonTienThueModel.cs" />
     <Compile Include="KhachHangModel.cs" />
     <Compile Include="NhanVienModel.cs" />

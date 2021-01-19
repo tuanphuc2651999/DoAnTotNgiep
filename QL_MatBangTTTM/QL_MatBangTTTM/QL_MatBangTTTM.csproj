@@ -86,6 +86,12 @@
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDichVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDichVu.Designer.cs">
+      <DependentUpon>FrmDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,12 @@
     </Compile>
     <Compile Include="FrmDSMatBangChuaThue.Designer.cs">
       <DependentUpon>FrmDSMatBangChuaThue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGiaThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGiaThue.Designer.cs">
+      <DependentUpon>FrmGiaThue.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmHoaDonDichVu.cs">
       <SubType>Form</SubType>
@@ -241,11 +253,17 @@
     <EmbeddedResource Include="FrmDangNhap.resx">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmDichVu.resx">
+      <DependentUpon>FrmDichVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDoiMatKhau.resx">
       <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDSMatBangChuaThue.resx">
       <DependentUpon>FrmDSMatBangChuaThue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGiaThue.resx">
+      <DependentUpon>FrmGiaThue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHoaDonDichVu.resx">
       <DependentUpon>FrmHoaDonDichVu.cs</DependentUpon>

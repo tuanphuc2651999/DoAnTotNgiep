@@ -120,7 +120,7 @@ namespace DAL
     #endregion
 		
 		public DBQL_MatBangTTTMDataContext() : 
-				base(global::DAL.Properties.Settings.Default.QL_MatBangTTTMConnectionString2, mappingSource)
+				base(global::DAL.Properties.Settings.Default.QL_MatBangTTTMConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

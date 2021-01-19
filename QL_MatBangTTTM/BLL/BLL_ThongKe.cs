@@ -30,7 +30,7 @@ namespace BLL
         }
         public dynamic HDDichVu()
         {
-            return tk.HDTienCoc();
+            return tk.HDDichVu();
         }
     }
 }

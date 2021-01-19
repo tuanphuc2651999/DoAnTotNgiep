@@ -24,7 +24,8 @@ namespace QL_MatBangTTTM
             // Application.Run(new FrmMain(""));
             // Application.Run(new FrmTaiKhoanNV(""));
             // Application.Run(new FrmMatBang(""));
-
+            // Application.Run(new FrmGiaThue());
+            // Application.Run(new FrmDichVu(""));
         }
     }
 }
